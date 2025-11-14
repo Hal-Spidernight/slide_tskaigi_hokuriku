@@ -1,10 +1,10 @@
 ---
 # try also 'default' to start simple
-theme: '@ktym4a/slidev-theme-ktym4a'
-themeConfig:
-  baseColor: blue
+theme: seriph
 # some information about your slides (markdown enabled)
-title: 「TSのAPI型安全」の対価は誰が払う？ 不公平なスキーマ駆動に終止符を打つハイブリッド戦略
+title: |
+  「TSのAPI型安全」の対価は誰が払う？
+  不公平なスキーマ駆動に終止符を打つハイブリッド戦略
 info: |
   TSKaigi Hokurikuで発表するスライドです
 # apply UnoCSS classes to the current slide

@@ -1,5 +1,5 @@
-# 「TSのAPI型安全」の対価は誰が払う？ 不公平なスキーマ駆動に終止符を打つハイブリッド戦略
+<h1 style="white-space:pre-wrap">
+{{ $slidev.configs.title }}
+</h1>
 
 Subtitle
-
-<p>HOGE</p>
