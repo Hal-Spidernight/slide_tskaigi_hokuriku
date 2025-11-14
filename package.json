@@ -8,6 +8,7 @@
     "export": "slidev export"
   },
   "dependencies": {
+    "@ktym4a/slidev-theme-ktym4a": "^0.3.2",
     "@slidev/cli": "^52.8.0",
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
@@ -16,17 +17,6 @@
   "devDependencies": {
     "prettier": "^3.6.2",
     "prettier-plugin-slidev": "^1.0.5"
-  },
-  "slidev": {
-    "default": {
-      "aspectRatio": "16/9",
-      "canvasWidth": 980,
-      "fonts": {
-        "sans": "Robot",
-        "mono": "Fira Code"
-      }
-    },
-    "highlighter": "shiki"
   },
   "engines": {
     "slidev": ">=0.19.3"

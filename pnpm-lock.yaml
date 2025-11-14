@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@ktym4a/slidev-theme-ktym4a':
+        specifier: ^0.3.2
+        version: 0.3.2(@slidev/types@52.8.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.24)(markdown-it-async@2.2.0)(postcss@8.5.6)(typescript@5.9.3)(vite@7.2.2(@types/node@22.19.1)(jiti@2.6.1)(yaml@2.8.1)))
       '@slidev/cli':
         specifier: ^52.8.0
         version: 52.8.0(@babel/parser@7.28.5)(@nuxt/kit@3.20.1)(@types/markdown-it@14.1.2)(@types/node@22.19.1)(@vue/compiler-sfc@3.5.24)(markdown-it-async@2.2.0)(postcss@8.5.6)
@@ -169,6 +172,9 @@ packages:
 
   '@braintree/sanitize-url@7.1.1':
     resolution: {integrity: sha512-i1L7noDNxtFyL5DmZafWy1wRVhGehQmzZaz1HiN5e7iylJMSZR7ekOV7NsIqa5qBldlLrsKv4HbgFUVlQrz8Mw==}
+
+  '@catppuccin/palette@1.7.1':
+    resolution: {integrity: sha512-aRc1tbzrevOTV7nFTT9SRdF26w/MIwT4Jwt4fDMc9itRZUDXCuEDBLyz4TQMlqO9ZP8mf5Hu4Jr6D03NLFc6Gw==}
 
   '@chevrotain/cst-dts-gen@11.0.3':
     resolution: {integrity: sha512-BvIKpRLeS/8UbfxXxgC33xOumsacaeCKAjAeLyOn7Pcp95HiRbrpl14S+9vaZLolnbssPIUuiUd8IvgkRyt6NQ==}
@@ -383,6 +389,12 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@ktym4a/slidev-theme-ktym4a@0.3.2':
+    resolution: {integrity: sha512-i8wDTI/OFt5zB4I/MSmeXagvchsUOy3GYhvBYf12pdvPgNLE363UlfFP3VYzcohDb3h8Grqt8LCm+Ix1txw4AQ==}
+    engines: {node: '>=18.0.0', slidev: '>=0.52.0'}
+    peerDependencies:
+      '@slidev/types': '>=0.52.0'
 
   '@leichtgewicht/ip-codec@2.0.5':
     resolution: {integrity: sha512-Vo+PSpZG2/fmgmiNzYK9qWRh8h/CHrwD0mo1h1DzL4yzHNSfWYujGTYsWGreD000gcgmZ7K4Ys6Tx9TxtsKdDw==}
@@ -2819,6 +2831,8 @@ snapshots:
 
   '@braintree/sanitize-url@7.1.1': {}
 
+  '@catppuccin/palette@1.7.1': {}
+
   '@chevrotain/cst-dts-gen@11.0.3':
     dependencies:
       '@chevrotain/gast': 11.0.3
@@ -2971,6 +2985,11 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@ktym4a/slidev-theme-ktym4a@0.3.2(@slidev/types@52.8.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.24)(markdown-it-async@2.2.0)(postcss@8.5.6)(typescript@5.9.3)(vite@7.2.2(@types/node@22.19.1)(jiti@2.6.1)(yaml@2.8.1)))':
+    dependencies:
+      '@catppuccin/palette': 1.7.1
+      '@slidev/types': 52.8.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.24)(markdown-it-async@2.2.0)(postcss@8.5.6)(typescript@5.9.3)(vite@7.2.2(@types/node@22.19.1)(jiti@2.6.1)(yaml@2.8.1))
 
   '@leichtgewicht/ip-codec@2.0.5': {}
 
