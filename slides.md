@@ -12,12 +12,12 @@ info: |
 
   Learn more at [Sli.dev](https://sli.dev)
 # apply UnoCSS classes to the current slide
-class: text-center
+class: fade-out
 # https://sli.dev/features/drawing
 drawings:
   persist: false
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
-transition: slide-left
+transition: fade
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 # duration of the presentation
@@ -118,10 +118,8 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
 
 ---
-
 layout: two-cols
 layoutClass: gap-16
-
 ---
 
 # Table of contents
@@ -537,11 +535,9 @@ database "MySql" {
 Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
 
 ---
-
 foo: bar
 dragPos:
-square: 691,32,167,\_,-16
-
+  square: 691,32,167,\_,-16
 ---
 
 # Draggable Elements
@@ -567,7 +563,7 @@ Double-click on the draggable elements to edit their positions.
 </v-drag>
 ```
 
-<v-drag pos="663,206,261,_,-15">
+<v-drag pos="653,315,261,_,-15">
   <div text-center text-3xl border border-main rounded>
     Double-click me!
   </div>
@@ -584,10 +580,8 @@ Double-click on the draggable elements to edit their positions.
 <v-drag-arrow pos="67,452,253,46" two-way op70 />
 
 ---
-
 src: ./pages/imported-slides.md
 hide: false
-
 ---
 
 ---
@@ -618,8 +612,7 @@ console.log(emptyArray<number>(10).reduce((fib) => [...fib, fib.at(-1)! + fib.at
 
 ---
 
-layout: center
-class: text-center
+layout: center class: text-center
 
 ---
 

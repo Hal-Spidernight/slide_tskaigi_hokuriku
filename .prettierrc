@@ -3,5 +3,14 @@
   "tabWidth": 2,
   "singleQuote": true,
   "trailingComma": "es5",
-  "semi": false
+  "semi": false,
+  "overrides": [
+    {
+      "files": ["slides.md", "pages/*.md"],
+      "options": {
+        "parser": "slidev",
+        "plugins": ["prettier-plugin-slidev"]
+      }
+    }
+  ]
 }
