@@ -1,10 +1,14 @@
 ---
 # try also 'default' to start simple
 theme: ../theme/
+themeConfig:
+  company: 株式会社LIXIL
+  author: Hal
 # some information about your slides (markdown enabled)
 title: |
-  「TSのAPI型安全」の対価は誰が払う？
-  不公平なスキーマ駆動に終止符を打つハイブリッド戦略
+  "TSのAPI型安全"の対価は誰が払う？
+  不公平なスキーマ駆動に終止符を打つ
+  ハイブリッド戦略
 info: |
   TSKaigi Hokurikuで発表するスライドです
 # apply UnoCSS classes to the current slide
@@ -18,7 +22,6 @@ transition: fade
 mdc: true
 # duration of the presentation
 duration: 30min
-src: ./pages/title.md
 ---
 
 ---
