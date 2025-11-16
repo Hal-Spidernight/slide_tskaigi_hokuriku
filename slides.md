@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: seriph
+theme: ../theme/
 # some information about your slides (markdown enabled)
 title: |
   「TSのAPI型安全」の対価は誰が払う？
@@ -22,7 +22,6 @@ src: ./pages/title.md
 ---
 
 ---
-transition: slide-up
 level: 2
 src: ./pages/section1.md
 ---
