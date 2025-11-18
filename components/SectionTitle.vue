@@ -1,6 +1,6 @@
 <template>
   <SectionCard>
-    <h2 class="flex justify-center items-center h-100">{{ title }}</h2>
+    <h2 class="my-8 flex justify-center items-center h-100 font-bold">{{ title }}</h2>
   </SectionCard>
 </template>
 <script setup lang="ts">

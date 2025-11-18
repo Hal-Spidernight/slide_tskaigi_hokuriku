@@ -7,7 +7,7 @@
 
 <style scoped>
 .slide-section-content {
-  background: #00000044;
+  background: #00000099;
   width: 100%;
   height: 100%;
   border: 1px solid #ffffff22;
