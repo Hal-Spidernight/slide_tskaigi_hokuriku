@@ -30,13 +30,6 @@ src: ./pages/section1.md
 ---
 
 ---
-
-# Test2
-
-hoge
-
+level: 1
+src: ./pages/section2.md
 ---
-
-# Test3
-
-fuga
