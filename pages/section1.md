@@ -55,26 +55,99 @@ graph LR
 ```
 
 ---
+layout: two-cols
+---
 
-## 実装するとこんな感じ
-
-#### OpenAPI
+### OpenAPI
 
 ```yml
 # openapi.yml
+…
+paths:
+  /users/{userId}:
+    get:
+      summary: 特定のユーザー情報を取得
+      operationId: getUserById
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: 取得したいユーザーのID
+          schema:
+            type: integer
+            format: int64
+            example: 101
+      responses:
+        '200':
+          description: ユーザー情報の取得に成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
 ```
+
+::right::
+
+<div style="height:2rem"/>
+
+```yml
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          description: ユーザーID
+          example: 101
+```
+
+---
 
 #### TypeScript
 
 ```ts
-type hoge = {}
+export interface paths {
+  '/users/{userId}': {
+    …
+    get: operations["getUserById"]
+  }
+}
+
+export interface operations {
+    getUserById: {
+        parameters: {
+            query: {
+                userId: string;
+            }
+        },
+        responses: {
+            200: {
+                headers: {…},
+                content: {
+                    "application/json": components["schemas"]["User"]
+                }
+            }
+        },
+    }
+}
+
 ```
+
+---
 
 #### Java(POJO)
 
+Javaは `model.mustache` で出力する際のテンプレートを定義可能
+
 ```java
-class Example {
-    aaa: String;
+public class getUserByIdRequest {
+    private String userId = null; //説明文
+}
+
+public class getUserByIdResponse {
+    private String id = null; //説明文
 }
 ```
 
