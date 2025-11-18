@@ -58,8 +58,8 @@ graph LR
 
 ### OpenAPI
 
-````md magic-move {at: 5, lines: true}
-```yml {*|8-16|23}
+````md magic-move {at: 2, lines: true}
+```yml {8-16|23}
 # openapi.yml
 …
 paths:
@@ -103,8 +103,8 @@ components:
 
 #### TypeScript
 
-````md magic-move {at:3, lines: true}
-```ts {*|11-13|16-21}
+````md magic-move {at:2, lines: true}
+```ts {11-13|16-21}
 export interface paths {
   '/users/{userId}': {
     …

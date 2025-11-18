@@ -1,6 +1,15 @@
 <template>
   <div class="flex consider-factors">
-    <SectionCard class="factor-item" v-for="(factor, idx) in factorItems" :key="idx">
+    <SectionCard
+      v-for="(factor, idx) in factorItems"
+      :key="idx"
+      class="factor-item"
+      v-click
+      v-motion
+      :initial="{ y: -50 }"
+      :enter="{ y: 0 }"
+      :leave="{ y: 50 }"
+    >
       <h5 class="font-bold">{{ factor.title }}</h5>
       <ul class="mt-4">
         <li v-for="(description, idx) in factor.descriptions" :key="idx" class="text-sm">{{ description }}</li>
@@ -37,7 +46,7 @@ const factorItems = [
 </script>
 <style scoped>
 .consider-factors {
-  margin-top: 3rem;
+  margin-top: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 1rem;
