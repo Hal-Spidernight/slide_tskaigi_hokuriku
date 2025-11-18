@@ -3,6 +3,17 @@
 <ConsiderFactors/>
 
 ---
+dragPos:
+  square: 507,260,300,_
+---
+
+<v-drag pos="square" text-3xl>
+    <div>
+        Hoge
+    </div>
+</v-drag>
+
+---
 
 # Imported Slides
 

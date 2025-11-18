@@ -55,12 +55,11 @@ graph LR
 ```
 
 ---
-layout: two-cols
----
 
 ### OpenAPI
 
-```yml
+````md magic-move {at: 5, lines: true}
+```yml {*|8-16|23}
 # openapi.yml
 …
 paths:
@@ -86,11 +85,7 @@ paths:
                 $ref: '#/components/schemas/User'
 ```
 
-::right::
-
-<div style="height:2rem"/>
-
-```yml
+```yml {*|6-10}
 components:
   schemas:
     User:
@@ -102,12 +97,14 @@ components:
           description: ユーザーID
           example: 101
 ```
+````
 
 ---
 
 #### TypeScript
 
-```ts
+````md magic-move {at:3, lines: true}
+```ts {*|11-13|16-21}
 export interface paths {
   '/users/{userId}': {
     …
@@ -134,6 +131,17 @@ export interface operations {
 }
 
 ```
+
+```ts
+export interface components {
+  schemas: {
+    User: {
+      id: string
+    }
+  }
+}
+```
+````
 
 ---
 
