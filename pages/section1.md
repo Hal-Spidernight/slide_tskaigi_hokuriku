@@ -51,12 +51,14 @@ class Example {
 ```
 
 ---
+transition: fade
+---
 
 <SectionTitle title="スキーマ駆動開発、めっちゃ便利だし積極的に採用しよう！"/>
 
 ---
 
-<SectionTitle title="🤔"/>
+<SectionTitle title="...🤔"/>
 
 ---
 
@@ -64,9 +66,10 @@ class Example {
 
 1. APIの開発フェーズはどのあたり？
 2. スキーマ生成の起点は？
-    1. OpenAPIを直に書くのはかなり大変
-    2. TypeSpec? バックエンドから生成？
+   1. OpenAPIを直に書くのはかなり大変
+   2. TypeSpec? バックエンドから生成？
 3. 今やるべ
+
 ---
 
 # Imported Slides
