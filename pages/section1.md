@@ -59,11 +59,13 @@ graph LR
 drawings:
   persist: true
 ---
+
 ### OpenAPI
 
-<p v-click="1" v-drag="[501,250,154,53]">Query Parameter</p>
+<p v-click="1" v-click.hide="3" v-drag="[501,250,154,53]">Query Parameter</p>
+<svg src="">
 
-<p v-click="2" v-drag="[534,429,88,52]">Response</p>
+<p v-click="2" v-click.hide="3" v-drag="[534,429,88,52]">Response</p>
 
 ````md magic-move {at: 2, lines: true}
 ```yml {8-16|23}
