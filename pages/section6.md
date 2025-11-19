@@ -1,0 +1,1 @@
+<SectionTitle title="コストをシフトさせない仕組み" />

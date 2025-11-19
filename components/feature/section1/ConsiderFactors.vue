@@ -18,6 +18,8 @@
   </div>
 </template>
 <script setup lang="ts">
+import SectionCard from '../../SectionCard.vue'
+
 const factorItems = [
   {
     title: '今の開発フェーズは？',
@@ -29,17 +31,22 @@ const factorItems = [
   },
   {
     title: '何を真実のソースとするか',
-    descriptions: ['実装よりもスキーマを優先させる運用が重要', 'OpenAPI? GraphQL? gRPC?'],
+    descriptions: ['OpenAPI? TypeSpec? 実装？', '実装よりもスキーマを優先させる運用が重要'],
   },
   {
     title: 'スキーマ保守コストは飲み込めるか？',
-    descriptions: ['OpenAPIを直接書くのはかなり大変', 'TypeSpecを使うなら学習コストを考慮'],
+    descriptions: [
+      'OpenAPIを直接書くのはかなり大変',
+      'TypeSpecを使うなら学習コストを考慮',
+      '小規模チームだとベネフィットとのバランスが微妙',
+      'WebSocketやgRPC,GraphQLなどREST以外のAPIは？',
+    ],
   },
   {
     title: '開発プロセスの合意は得られているか？',
     descriptions: [
       'スキーマを中心に据えた開発プロセスにチーム全体が合意しているか？',
-      'BEチームはスキーマを最初に更新することに納得しているか？',
+      'BEチームへの負荷増加をどう説明するか？',
     ],
   },
 ] satisfies { title: string; descriptions?: string[] }[]

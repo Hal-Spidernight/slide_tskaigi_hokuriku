@@ -3,42 +3,49 @@
 <ConsiderFactors/>
 
 ---
-dragPos:
-  square: 507,260,300,_
----
 
-<v-drag pos="square" text-3xl>
-    <div>
-        Hoge
-    </div>
-</v-drag>
+<SectionTitle :title="'スキーマ駆動開発でよく起きる問題'"/>
 
 ---
 
-# Imported Slides
-
-You can split your slides.md into multiple files and organize them as you want using the `src` attribute.
-
-#### `slides.md`
-
-```markdown
-# Page 1
-
-Page 2 from main entry.
+## 1. 早すぎた適用🧟
 
 ---
 
-## src: ./subpage.md
-```
+## 問題の考察・解決
 
-<br>
+---
 
-#### `subpage.md`
+## 2. OpenAPIのメンテコストが高い
 
-```markdown
-# Page 2
+OpenAPIの定義は長くなりがちで、Schemaコンポーネントのパス構造も少し癖がある。
 
-Page 2 from another file.
-```
+---
 
-[Learn more](https://sli.dev/guide/syntax.html#importing-slides)
+## 問題の考察・解決
+
+### 解決策→TypeSpecでコンポーネント管理するか、API実装から生成する
+
+---
+
+### 2-a. EdgeCase: OpenAPI 3.1.0で空Object定義すると `unevaluatedProperties` として評価されてしまう
+
+---
+
+## 問題の考察・解決
+
+### 解決策→`Record<unknown>`を明示する
+
+---
+
+## 3. 局所最適化によるコストシフト
+
+---
+
+## 問題の考察
+
+---
+
+## 解決案
+
+### 一口に解決することは難しい→時間とリソースによってトレードオフの構造がシフトするため

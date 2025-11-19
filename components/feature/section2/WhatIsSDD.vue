@@ -28,7 +28,7 @@
   </SectionCard>
 </template>
 <script setup lang="ts">
-import SectionCard from '../SectionCard.vue'
+import SectionCard from '../../SectionCard.vue'
 import { useSlideContext } from '@slidev/client'
 
 const { $slidev, $nav } = useSlideContext()

@@ -25,11 +25,31 @@ duration: 30min
 ---
 
 ---
-level: 2
+level: 1
 src: ./pages/section1.md
 ---
 
 ---
 level: 1
 src: ./pages/section2.md
+---
+
+---
+level: 1
+src: ./pages/section3.md
+---
+
+---
+level: 1
+src: ./pages/section4.md
+---
+
+---
+level: 1
+src: ./pages/section5.md
+---
+
+---
+level: 1
+src: ./pages/section6.md
 ---
