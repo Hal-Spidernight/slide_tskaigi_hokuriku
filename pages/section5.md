@@ -97,7 +97,11 @@ def read_root(sample_request:SampleRequest):
         "updated_at": now
         }
 ```
+````
 
+---
+
+````md magic-move {lines: true}
 ```json
 //openapi.json
 {
@@ -125,66 +129,73 @@ def read_root(sample_request:SampleRequest):
       }
     }
   },
-  "components": {
-    "schemas": {
-      "HTTPValidationError": {
-        "properties": {
-          "detail": { "items": { "$ref": "#/components/schemas/ValidationError" }, "type": "array", "title": "Detail" }
+  …
+```
+
+```json
+    "components": {
+        "schemas": {
+        "HTTPValidationError": {
+            "properties": {
+            "detail": { "items": { "$ref": "#/components/schemas/ValidationError" }, "type": "array", "title": "Detail" }
+            },
+            "type": "object",
+            "title": "HTTPValidationError"
         },
-        "type": "object",
-        "title": "HTTPValidationError"
-      },
-      "SampleRequest": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "title": "Id",
-            "description": "サンプルAPIのID",
-            "default": "",
-            "summary": "サンプルID"
-          },
-          "params": {
-            "anyOf": [{ "items": { "type": "string" }, "type": "array" }, { "type": "null" }],
-            "title": "Params",
-            "description": "サンプルAPIのパラメータ",
-            "summary": "サンプルパラメータ"
-          }
+        "SampleRequest": {
+            "properties": {
+            "id": {
+                "type": "string",
+                "title": "Id",
+                "description": "サンプルAPIのID",
+                "default": "",
+                "summary": "サンプルID"
+            },
+            "params": {
+                "anyOf": [{ "items": { "type": "string" }, "type": "array" }, { "type": "null" }],
+                "title": "Params",
+                "description": "サンプルAPIのパラメータ",
+                "summary": "サンプルパラメータ"
+            }
+            },
+            "type": "object",
+            "title": "SampleRequest"
         },
-        "type": "object",
-        "title": "SampleRequest"
-      },
-      "SampleResponse": {
-        "properties": {
-          "name": {
-            "type": "string",
-            "title": "Name",
-            "description": "IDに紐づく名称",
-            "default": "",
-            "summary": "名前"
-          },
-          "created_at": { "type": "string", "format": "date-time", "title": "Created At" },
-          "updated_at": { "type": "string", "format": "date-time", "title": "Updated At" }
+        "SampleResponse": {
+            "properties": {
+            "name": {
+                "type": "string",
+                "title": "Name",
+                "description": "IDに紐づく名称",
+                "default": "",
+                "summary": "名前"
+            },
+            "created_at": { "type": "string", "format": "date-time", "title": "Created At" },
+            "updated_at": { "type": "string", "format": "date-time", "title": "Updated At" }
+            },
+            "type": "object",
+            "required": ["created_at", "updated_at"],
+            "title": "SampleResponse"
         },
-        "type": "object",
-        "required": ["created_at", "updated_at"],
-        "title": "SampleResponse"
-      },
-      "ValidationError": {
-        "properties": {
-          "loc": {
-            "items": { "anyOf": [{ "type": "string" }, { "type": "integer" }] },
-            "type": "array",
-            "title": "Location"
-          },
-          "msg": { "type": "string", "title": "Message" },
-          "type": { "type": "string", "title": "Error Type" }
-        },
-        "type": "object",
-        "required": ["loc", "msg", "type"],
-        "title": "ValidationError"
-      }
+```
+
+```json
+        "ValidationError": {
+            "properties": {
+                "loc": {
+                "items": { "anyOf": [{ "type": "string" }, { "type": "integer" }] },
+                "type": "array",
+                "title": "Location"
+                },
+                "msg": { "type": "string", "title": "Message" },
+                "type": { "type": "string", "title": "Error Type" }
+            },
+            "type": "object",
+            "required": ["loc", "msg", "type"],
+            "title": "ValidationError"
+            }
+        }
     }
-  }
 }
 ```
 ````
