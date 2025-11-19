@@ -50,14 +50,29 @@ transition: fade
 
 ## バックエンドにTypeScriptを選ぶ時の注意点
 
-### パフォーマンスや他言語の方が向いている処理はある
+### 処理によっては他言語の方が向いている場合がある
 
     - Node.jsはシングルスレッド処理であることを理解する
-    - CPUバウンドな処理はどうか？
+    - イベントループとスレッドの違い
+    - CPUバウンドな処理をメインスレッドで行わせるのは大変
+        - 暗号化
+        - 画像処理
+        - 膨大なデータ処理(数百万回規模のループ等)
+        - バッチを適切に動かすには工夫がいる
+            - Worker ThreadsやStream活用
+        - 数値計算・機械学習等
+            - Worker Threadsを使う
+            - RustやGoでモジュールを作る
+    - どうしても重い処理をやる必要があるならマルチスレッド化が必要
+        - Worker Threads の特徴を理解する
+
+参考：https://speakerdeck.com/sosukesuzuki/awaithu-bichu-sinosutatukutoresunokun-nan-toshi-zhuang
 
 ### エラーハンドリングがかなり辛い
+
     - Error Typeの識別
-    - 
+    - スタックトレースの欠損問題
+        - async/await でハンドリングした際に呼び出し元関数がコールスタックに残っていない
 
 ### 依存関係が増えやすい(標準Utilsが微妙なことがままある)
 
