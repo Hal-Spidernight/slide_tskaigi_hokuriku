@@ -33,6 +33,7 @@ layout: default
 ```mermaid
 graph LR
     A0[TypeSpec] --> A[📄 OpenAPI Specification]
+    style A0 stroke-dasharray: 5 5
     A --> B(🛠️ Code Generator);
     B --> C(💻 Frontend);
     B --> D(🖥️ Backend);
@@ -55,8 +56,14 @@ graph LR
 ```
 
 ---
-
+drawings:
+  persist: true
+---
 ### OpenAPI
+
+<p v-click="1" v-drag="[501,250,154,53]">Query Parameter</p>
+
+<p v-click="2" v-drag="[534,429,88,52]">Response</p>
 
 ````md magic-move {at: 2, lines: true}
 ```yml {8-16|23}

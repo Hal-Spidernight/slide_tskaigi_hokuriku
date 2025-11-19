@@ -15,7 +15,7 @@ info: |
 class: text-center
 # https://sli.dev/features/drawing
 drawings:
-  persist: false
+  persist: true
 # slide transition: https://sli.dev/guide/animations.html#slide-transitions
 transition: blur-transition
 # enable MDC Syntax: https://sli.dev/features/mdc
