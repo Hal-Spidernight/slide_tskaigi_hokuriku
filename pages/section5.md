@@ -53,7 +53,7 @@ from fastapi import FastAPI
 from fastapi.openapi.utils import get_openapi
 
 app = FastAPI(
-    title=settings.APP_NAME,
+    title="サンプルAPI",
     openapi_url="/api/v1/openapi.json"
 )
 …
@@ -63,9 +63,9 @@ def custom_openapi():
         return app.openapi_schema
 
     app.openapi_schema = get_openapi(
-        title=settings.APP_NAME,
+        title="サンプルAPI",
         version="1.0.0",
-        description="サンプルAPI",
+        description="サンプルのAPIです",
         routes=app.routes,
         openapi_version="3.1.0",
     )
@@ -98,8 +98,94 @@ def read_root(sample_request:SampleRequest):
         }
 ```
 
-```yml
-
+```json
+//openapi.json
+{
+  "openapi": "3.1.0",
+  "info": { "title": "サンプルAPI", "description": "サンプルのAPIです", "version": "1.0.0" },
+  "paths": {
+    "/example": {
+      "get": {
+        "summary": "Read Root",
+        "operationId": "read_root_example_get",
+        "requestBody": {
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SampleRequest" } } },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SampleResponse" } } }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/HTTPValidationError" } } }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "properties": {
+          "detail": { "items": { "$ref": "#/components/schemas/ValidationError" }, "type": "array", "title": "Detail" }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "SampleRequest": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "サンプルAPIのID",
+            "default": "",
+            "summary": "サンプルID"
+          },
+          "params": {
+            "anyOf": [{ "items": { "type": "string" }, "type": "array" }, { "type": "null" }],
+            "title": "Params",
+            "description": "サンプルAPIのパラメータ",
+            "summary": "サンプルパラメータ"
+          }
+        },
+        "type": "object",
+        "title": "SampleRequest"
+      },
+      "SampleResponse": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "IDに紐づく名称",
+            "default": "",
+            "summary": "名前"
+          },
+          "created_at": { "type": "string", "format": "date-time", "title": "Created At" },
+          "updated_at": { "type": "string", "format": "date-time", "title": "Updated At" }
+        },
+        "type": "object",
+        "required": ["created_at", "updated_at"],
+        "title": "SampleResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": { "anyOf": [{ "type": "string" }, { "type": "integer" }] },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": { "type": "string", "title": "Message" },
+          "type": { "type": "string", "title": "Error Type" }
+        },
+        "type": "object",
+        "required": ["loc", "msg", "type"],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
 ```
 ````
 

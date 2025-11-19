@@ -3,20 +3,23 @@ from fastapi.openapi.utils import get_openapi
 from pydantic import BaseModel, Field
 from datetime import datetime
 
+settings = {
+    "APP_NAME": "サンプルAPI"
+}
+
 app = FastAPI(
-    title=settings.APP_NAME,
+    title=settings["APP_NAME"],
     openapi_url="/api/v1/openapi.json"
 )
-…
 
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
 
     app.openapi_schema = get_openapi(
-        title=settings.APP_NAME,
+        title=settings["APP_NAME"],
         version="1.0.0",
-        description="サンプルAPI",
+        description="サンプルのAPIです",
         routes=app.routes,
         openapi_version="3.1.0",
     )
