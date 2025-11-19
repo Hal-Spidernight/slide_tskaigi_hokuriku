@@ -66,20 +66,34 @@ transition: fade
     - どうしても重い処理をやる必要があるならマルチスレッド化が必要
         - Worker Threads の特徴を理解する
 
-参考：https://speakerdeck.com/sosukesuzuki/awaithu-bichu-sinosutatukutoresunokun-nan-toshi-zhuang
+---
 
-### エラーハンドリングがかなり辛い
+### エラーハンドリングが辛いことがある
 
     - Error Typeの識別
-    - スタックトレースの欠損問題
-        - async/await でハンドリングした際に呼び出し元関数がコールスタックに残っていない
+        - なんだかんだカスタムエラー型を作ることが多い
+    - Promiseのスタックトレースが消える問題
+        - ハンドリングの仕方によってerror.stackが消えるのでだいぶ気を付ける必要がある(昔よりはマシらしい)
 
-### 依存関係が増えやすい(標準Utilsが微妙なことがままある)
+---
 
+### 長期運用に向かない側面がある
+
+    - BEでは長期運用の負担を下げることが好まれる傾向がある(FEとはかなり文化的背景が違う)
+    - Node.js/TypeScript BEの潮流は速いので継続的なメンテが必要
+        - これが許容できるなら別に良いかもしれない
+    -
+
+###### 参考: [TypeScriptをバックエンドで使わない理由](https://zenn.dev/putcho/articles/32ee8d7ed8ce15)
+
+---
+transition: fade
 ---
 
 <SectionTitle title="メリット・デメリットを考慮した上で技術選定からコスト構造の設計までやれればベスト" />
 
+---
+transition: fade
 ---
 
 <SectionTitle title="実際によく見る構成ではどうか？" />

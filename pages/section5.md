@@ -1,4 +1,4 @@
-<SectionTitle title="PLAN-B: 異種間言語連携のハイブリット戦略" />
+<SectionTitle title="PLAN-B: 異種間言語連携のハイブリッド戦略" />
 
 ---
 
