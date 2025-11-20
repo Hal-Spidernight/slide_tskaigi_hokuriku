@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "slidev build",
+    "build:gh_pages": "slidev build --base /slide_tskaigi_hokuriku/",
     "dev": "slidev --open",
     "export": "slidev export"
   },
