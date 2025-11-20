@@ -319,7 +319,7 @@ graph LR
 
 ```mermaid {scale:0.6}
 graph LR
- B4[後期フェーズ] -- 100% --> C1[**実装**];
+ B4[後期フェーズ] --> C1[**実装**];
 
     subgraph 後期フェーズの作業
         C1 --> C2[Spec定義を全て廃止];
@@ -327,7 +327,7 @@ graph LR
     end
 ```
 
-<div class="border-1px rounded-md pa-2" v-drag="[609,202,366,168]">
+<div class="border-1px rounded-md pa-2" v-drag="[608,197,366,168]">
 <h4>ポイント</h4>
 <ul class="text-md">
     <li>開発初期から初速が出やすい</li>
