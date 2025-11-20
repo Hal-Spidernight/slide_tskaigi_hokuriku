@@ -2,13 +2,13 @@ name: Check Pull Request and Build Artifacts
 on:
   workflow_dispatch:
 
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - 'docs/**'
-      - '.vscode/**'
-      - '.github/workflows/**'
+  # push:
+  #   branches:
+  #     - main
+  #   paths-ignore:
+  #     - 'docs/**'
+  #     - '.vscode/**'
+  #     - '.github/workflows/**'
 jobs:
   check:
     runs-on: ubuntu-latest
