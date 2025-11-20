@@ -1,0 +1,7 @@
+package: schema
+generate:
+  echo-server: true
+  strict-server: true
+  models: true
+  embedded-spec: true
+output: ./internal/presentation/schema/openapi.gen.go

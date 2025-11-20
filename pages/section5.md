@@ -192,6 +192,9 @@ def read_root(sample_request:SampleRequest):
             "type": "object",
             "title": "SampleRequest"
         },
+```
+
+```json
         "SampleResponse": {
             "properties": {
             "name": {
@@ -208,9 +211,6 @@ def read_root(sample_request:SampleRequest):
             "required": ["created_at", "updated_at"],
             "title": "SampleResponse"
         },
-```
-
-```json
         "ValidationError": {
             "properties": {
                 "loc": {
@@ -233,6 +233,16 @@ def read_root(sample_request:SampleRequest):
 
 ---
 
+## 特徴
+
+- 先にrouter,modelを作ることでFEとの競合を抑える
+- 既にある実装を再利用できるためオーバーヘッドが少ない
+- OpenAPIの対応自体は数行の追加で可能
+- modelの情報はFieldの引数に追加
+- ymlを使う場合はPyYML等でparse
+
+---
+
 ## B. レガシーシステムのAPIを整理して再定義し直す刷新案件
 
 <br/>
@@ -251,7 +261,124 @@ def read_root(sample_request:SampleRequest):
 - APIが果たすべき役割の本質はほとんど変わらない(粒度や切り口は変わる)
   - 機能廃止・縮小はあるかも
 - バックエンドは１から製造し直す(現行コードの流用が困難であるケースを想定)
-  - 現行の振る舞いを検証するため、FEとの製造にタイムラグがある
+  - 現行の振る舞いを検証するため、<span v-mark="{ at: 1, color: 'rgba(221, 221, 0, 1)', type: 'circle' }">FEとの製造にタイムラグがある</span>
+
+---
+
+## Bへの提案： 開発フェーズの進度で優先比率を変える
+
+<br/>
+
+### 初期
+
+1. TypeSpecで整理されたAPIを設計し、OpenAPI・IFを生成
+2. FE,BEそれぞれでIFを利用して実装
+
+<p v-drag="[596,125,332,54]" class="text-center font-bold" v-mark.red>構築や調査で実装までラグがあるうちは契約を優先する</p>
+
+<br/>
+
+### 中期
+
+1. 以下の作業比率でAPI設計を進める
+   - 新規APIの設計：70%
+   - 既存Specの実装移行：30%
+
+<p v-drag="[595,269,332,40]" class="text-center font-bold" v-mark.red>APIリリース安定後は実装を優先する</p>
+
+<br/>
+
+### 後期
+
+Spec定義は全て廃止。実装優先にする
+
+---
+
+### イメージ
+
+```mermaid {scale:0.6}
+graph LR
+    A[初期フェーズ] --> A_PRIORITY{優先度};
+
+    subgraph 初期フェーズの作業
+        A_PRIORITY -- 100% --> A1[**IF契約/設計**];
+        A1 --> A2[TypeSpecでAPI設計/IF生成];
+        A2 --> A3[IF利用実装（FE/BE）];
+    end
+```
+
+```mermaid {scale:0.6}
+graph LR
+    A3[初期フェーズ] --> B[中期フェーズ];
+
+        subgraph 中期フェーズの作業
+            B --> B_PRIORITY{優先度の比率};
+            B_PRIORITY -- 70% --> B2[新規APIの実装/設計];
+            B_PRIORITY -- 30% --> B3[既存Specの実装移行];
+        end
+```
+
+```mermaid {scale:0.6}
+graph LR
+ B4[中期フェーズ] --> C[後期フェーズ];
+
+    subgraph 後期フェーズの作業
+        C -- 100% --> C1[**実装**];
+        C1 --> C2[Spec定義は全て廃止];
+    end
+```
+
+<div class="border-1px rounded-md pa-2" v-drag="[605,291,366,168,1]">
+<h4>ポイント</h4>
+<ul class="text-md">
+    <li>開発初期から初速が出やすい</li>
+    <li>IF合意のための検証コストはかかる</li>
+    <li>安定期以降メンテコストが抑えられる</li>
+    <li>移行と新規設計の作業バランスに注意</li>
+</ul>
+</div>
+
+---
+
+### Appendix: OpenAPIからGoのIF生成
+
+前提: Go@1.25.4
+
+[oapi-codegen](https://github.com/oapi-codegen/oapi-codegen) を利用
+
+````md magic-move {lines: true}
+```json
+//openapi.json
+{
+  "openapi": "3.1.0",
+  "info": { "title": "サンプルAPI", "description": "サンプルのAPIです", "version": "1.0.0" },
+  "paths": {
+    "/example": {
+      "get": {
+        "summary": "Read Root",
+        "operationId": "read_root_example_get",
+        "requestBody": {
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SampleRequest" } } },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SampleResponse" } } }
+          },
+          …
+        }
+      }
+    }
+  },
+  …
+}
+```
+
+```go
+
+```
+````
 
 ---
 
