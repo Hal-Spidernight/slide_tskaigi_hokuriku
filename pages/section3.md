@@ -4,13 +4,34 @@
 
 ## トレードオフとなるもの
 
-1. `責任：FEエンジニア<->BEエンジニア`
-2. `契約優先<->実装優先`
-3. `ベネフィット<->メンテナンスコスト`
+1. `責任：FEエンジニア<->BEエンジニア` Who
+2. `契約優先<->実装優先` When
+3. `ベネフィット<->メンテナンスコスト` What
 
 ---
 
-## イメージ図
+## 1
+
+```mermaid
+graph TD
+    subgraph NonSDD
+        A[非SDD（実装優先）]
+        BE[BEエンジニア] -->|実装・提供| API[実装されたAPI]
+        API -->|利用| FE[FEエンジニア]
+        FE -->|仕様のズレ| ADJUST[人間による調整・手戻り]
+
+    end
+
+    subgraph SDD_Flow
+        B[SDD（契約優先）]
+        SCHEMA[スキーマ（契約）]
+        SCHEMA -->|準拠| BE_SDD[BEエンジニア]
+        SCHEMA -->|準拠| FE_SDD[FEエンジニア]
+        BE_SDD -->|実装| API_SDD[API]
+        API_SDD -->|利用| FE_SDD
+
+    end
+```
 
 ---
 
