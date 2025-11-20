@@ -309,10 +309,9 @@ graph LR
 
 ```mermaid {scale:0.6}
 graph LR
-    A3[初期フェーズ] --> B[中期フェーズ];
+    A3[中期フェーズ] --> B_PRIORITY{優先度の比率};
 
         subgraph 中期フェーズの作業
-            B --> B_PRIORITY{優先度の比率};
             B_PRIORITY -- 70% --> B2[新規APIの実装/設計];
             B_PRIORITY -- 30% --> B3[既存Specの実装移行];
         end
@@ -320,15 +319,15 @@ graph LR
 
 ```mermaid {scale:0.6}
 graph LR
- B4[中期フェーズ] --> C[後期フェーズ];
+ B4[後期フェーズ] -- 100% --> C1[**実装**];
 
     subgraph 後期フェーズの作業
-        C -- 100% --> C1[**実装**];
-        C1 --> C2[Spec定義は全て廃止];
+        C1 --> C2[Spec定義を全て廃止];
+        C2 --> C3[実装からスキーマ・型を生成]
     end
 ```
 
-<div class="border-1px rounded-md pa-2" v-drag="[605,291,366,168,1]">
+<div class="border-1px rounded-md pa-2" v-drag="[609,202,366,168]">
 <h4>ポイント</h4>
 <ul class="text-md">
     <li>開発初期から初速が出やすい</li>
