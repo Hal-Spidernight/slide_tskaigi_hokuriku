@@ -25,6 +25,11 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    strategy:
+          matrix:
+            # NOTE: 必要に応じて node,pnpmのバージョンを変更してください
+            node-version: ['23.x']
+            pnpm-version: ['9.15.4']
     steps:
       - name: Checkout
         uses: actions/checkout@v4
