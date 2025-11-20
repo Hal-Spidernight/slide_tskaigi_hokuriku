@@ -1,1 +1,1 @@
-<SectionTitle title="コストをシフトさせない仕組み" />
+<SectionTitle title="モノレポ・マルチレポそれぞれのメンテコスト" />

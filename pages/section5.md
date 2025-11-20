@@ -417,3 +417,22 @@ type SampleResponse struct {
 
 - 必ずしも個人開発でなく、feature別に割り振られるケースもある。
 - 比較的開発フェーズは落ち着いている
+
+---
+
+## Cへの提案： 実装優先。
+
+### 担当機能APIが他で再利用される場合はIFクラスの実装を先行させる。
+
+１名で作業する場合FE,BEのコンテキストを理解しているため中間言語を用いたり合意形成のメリットが薄い。
+一気に実装まで進めてしまった方が良い。
+
+ただし、実装するAPIを別featureで再利用したいケースもあるので関係者と確認しながらIFクラス実装を先行させる。
+
+---
+
+## Appendix: Spring Boot実装からOpenAPIの生成
+
+### DTO(Data Transfer Object)の場合
+
+### POJO(Plain Old Java Object)の場合
