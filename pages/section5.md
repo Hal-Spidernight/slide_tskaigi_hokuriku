@@ -416,7 +416,7 @@ type SampleResponse struct {
 ### ポイント
 
 - 必ずしも個人開発でなく、feature別に割り振られるケースもある。
-- 比較的開発フェーズは落ち着いている
+- 比較的開発サイクルは落ち着いている
 
 ---
 
@@ -434,5 +434,10 @@ type SampleResponse struct {
 ## Appendix: Spring Boot実装からOpenAPIの生成
 
 ### DTO(Data Transfer Object)の場合
-
+```java
+//Spring Boot REST APIのDTOからOpenAPIへの変換サンプルを書く
+```
 ### POJO(Plain Old Java Object)の場合
+```java
+//Spring Boot REST APIのPOJOからOpenAPIへの変換サンプルを書く
+```

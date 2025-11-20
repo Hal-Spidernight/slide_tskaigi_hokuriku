@@ -26,7 +26,7 @@
 transition: fade
 ---
 
-<SectionTitle :title="'FE,BEどちらともTypeScriptなら同じスキルセットで\r\nメンテできるのでコストパフォーマンスが高い！'"/>
+<SectionTitle :title="'FE,BEどちらともTypeScriptなら同じスキルセットで\r\nメンテできるのでコストパフォーマンスが高いので \r\n BEにはNode.jsを採用しよう！'"/>
 
 ---
 transition: fade
@@ -39,12 +39,6 @@ transition: fade
 ---
 
 <SectionTitle title="...🤔" />
-
----
-transition: fade
----
-
-<SectionTitle title="これができたら苦労しない" />
 
 ---
 
@@ -75,22 +69,21 @@ transition: fade
     - Promiseのスタックトレースが消える問題
         - ハンドリングの仕方によってerror.stackが消えるのでだいぶ気を付ける必要がある(昔よりはマシらしい)
 
----
+<br/>
 
-### 長期運用に向かない側面がある
+### 長期運用に向かない側面を持つ
 
     - BEでは長期運用の負担を下げることが好まれる傾向がある(FEとはかなり文化的背景が違う)
     - Node.js/TypeScript BEの潮流は速いので継続的なメンテが必要
-        - これが許容できるなら別に良いかもしれない
-    -
+        - これが許容できるなら採用しても良いかも
 
-###### 参考: [TypeScriptをバックエンドで使わない理由](https://zenn.dev/putcho/articles/32ee8d7ed8ce15)
+<a v-drag="[53,498,264,20,0]" class="text-xs" href="https://zenn.dev/putcho/articles/32ee8d7ed8ce15" target="_blank">参考: TypeScriptをバックエンドで使わない理由</a>
 
 ---
 transition: fade
 ---
 
-<SectionTitle title="メリット・デメリットを考慮した上で技術選定からコスト構造の設計までやれればベスト" />
+<SectionTitle :title="'メリット・デメリットを考慮した上で技術選定から \r\n コスト構造の設計までやれればベスト'" />
 
 ---
 transition: fade

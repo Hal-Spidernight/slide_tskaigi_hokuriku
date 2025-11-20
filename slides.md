@@ -53,3 +53,16 @@ src: ./pages/section5.md
 level: 1
 src: ./pages/section6.md
 ---
+
+---
+level: 1
+src: ./pages/section7.md
+transition: fade
+---
+
+---
+
+<SectionTitle title="ご清聴ありがとうございました！"/>
+
+---
+
