@@ -1,5 +1,5 @@
 {
-  "openapi": "3.1.0",
+  "openapi": "3.0.0",
   "info": { "title": "サンプルAPI", "description": "サンプルのAPIです", "version": "1.0.0" },
   "paths": {
     "/example": {
@@ -42,7 +42,8 @@
             "summary": "サンプルID"
           },
           "params": {
-            "anyOf": [{ "items": { "type": "string" }, "type": "array" }, { "type": "null" }],
+            "anyOf": [{ "items": { "type": "string" }, "type": "array" }],
+            "nullable": true,
             "title": "Params",
             "description": "サンプルAPIのパラメータ",
             "summary": "サンプルパラメータ"
