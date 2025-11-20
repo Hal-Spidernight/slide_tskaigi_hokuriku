@@ -350,7 +350,7 @@ graph LR
 ```json
 //openapi.json
 {
-  "openapi": "3.1.0",
+  "openapi": "3.0.0",
   "info": { "title": "サンプルAPI", "description": "サンプルのAPIです", "version": "1.0.0" },
   "paths": {
     "/example": {
@@ -379,6 +379,8 @@ graph LR
 
 ```
 ````
+
+<p v-click.hide="1" v-drag="[248,178,493,49]"><u>oapi-codegenは現時点でOpenAPI3.1.0に完全対応していない</u></p>
 
 ---
 
