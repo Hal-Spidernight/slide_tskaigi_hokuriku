@@ -28,12 +28,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Setup pnpm v${{ matrix.pnpm-version }}
+        uses: pnpm/action-setup@v4.1.0
+        with:
+          version: ${{ matrix.pnpm-version }}
+      - name: Install Dependencies for Linter
+        run: pnpm i
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Build Site
+        run: pnpm build
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./
+          source: ./dist
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
