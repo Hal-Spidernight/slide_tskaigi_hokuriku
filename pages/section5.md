@@ -342,9 +342,7 @@ graph LR
 
 ### Appendix: OpenAPIからGoのIF生成
 
-前提: Go@1.25.4
-
-[oapi-codegen](https://github.com/oapi-codegen/oapi-codegen) を利用
+前提: Go@1.25.4, [oapi-codegen](https://github.com/oapi-codegen/oapi-codegen)を利用
 
 ````md magic-move {lines: true}
 ```json
@@ -376,11 +374,32 @@ graph LR
 ```
 
 ```go
+type SampleRequest struct {
+	// Id サンプルAPIのID
+	Id *string `json:"id,omitempty"`
 
+	// Params サンプルAPIのパラメータ
+	Params *SampleRequest_Params `json:"params"`
+}
+
+type SampleRequestParams0 = []string
+
+// SampleRequest_Params サンプルAPIのパラメータ
+type SampleRequest_Params struct {
+	union json.RawMessage
+}
+
+type SampleResponse struct {
+	CreatedAt time.Time `json:"created_at"`
+
+	// Name IDに紐づく名称
+	Name      *string   `json:"name,omitempty"`
+	UpdatedAt time.Time `json:"updated_at"`
+}
 ```
 ````
 
-<p v-click.hide="1" v-drag="[248,178,493,49]"><u>oapi-codegenは現時点でOpenAPI3.1.0に完全対応していない</u></p>
+<p v-click.hide="1" v-drag="[253,135,493,49]"><u>oapi-codegenは現時点でOpenAPI3.1.0に完全対応していない</u></p>
 
 ---
 
