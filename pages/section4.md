@@ -32,16 +32,125 @@ RPC 機能を使うと、サーバーとクライアントの間で API 仕様�
 
 ---
 
-### 実装イメージ(Hono)
+#### 実装イメージ(Hono)
 
-<<< ./hono-sample/backend/index.ts {monaco} {height:'430px'}
+````md magic-move {lines: true}
+```ts
+import { serve } from '@hono/node-server'
+import { Hono } from 'hono'
+import { z } from 'zod'
+import { describeRoute, resolver, openAPIRouteHandler, validator } from 'hono-openapi'
+
+const app = new Hono()
+
+const UserParams = z.object({
+  name: z.string().min(2).describe('The name of the user'),
+  email: z.string().describe('The email of the user'),
+  age: z.coerce.number().min(0).optional().describe('The age of the user'),
+})
+
+const UserResponse = z.object({
+  id: z.string(),
+  name: z.string(),
+  email: z.string(),
+  age: z.number().optional(),
+  createdAt: z.string(),
+})
+```
+
+```ts
+const routes = app.post(
+  '/api/users',
+  describeRoute({
+    description: 'ユーザー情報を取得するAPI',
+    responses: {
+      200: {
+        description: 'Successful response',
+        content: {
+          'application/json': { schema: resolver(UserResponse) },
+        },
+      },
+    },
+  }),
+  validator('json', UserParams),
+  async (c) => {
+    const { name, email, age } = c.req.valid('json')
+    const user = {
+      id: crypto.randomUUID(),
+      name,
+      email,
+      age,
+      createdAt: new Date().toISOString(),
+    } satisfies z.infer<typeof UserResponse>
+
+    return c.json(user, 201)
+  }
+)
+```
+
+```ts
+const documentation = {
+  openapi: '3.1.0',
+  info: {
+    title: 'My API',
+    version: '0.0.1',
+  },
+}
+
+app.get('/docs', openAPIRouteHandler(app, { documentation }))
+
+serve(
+  {
+    fetch: app.fetch,
+    port: 3001,
+  },
+  (info) => {
+    console.log(`Server is running on http://localhost:${info.port}`)
+  }
+)
+
+export default app
+
+export type AppType = typeof routes
+```
+````
 
 ---
 
-### 実装イメージ(Nuxt)
+#### 実装イメージ(Nuxt)
 
-<<< ./hono-sample/frontend/app.vue {monaco} {height:'430px'}
+<div v-drag="[460,170,391,264]">
+    <img width="300" class="mx-auto" src="/images/hono_rpc_1.png"/>
+    <p>型を生成しなくてもバックエンドから推論される</p>
+</div>
 
+````md magic-move {lines: true}
+```vue
+<template>
+  <div>...</div>
+</template>
+<script setup lang="ts">
+import { hc } from 'hono/client'
+import type { AppType } from '../backend/index'
+
+const client = hc<AppType>('http://localhost:3001/')
+
+onMounted(async () => {
+  const response = await client.api.users
+    .$post({
+      json: {
+        name: 'Taro Yamada',
+        email: 'sssssss@gmail.com',
+        age: 25,
+      },
+    })
+    .then((res) => res.json())
+
+  console.log(response.name)
+})
+</script>
+```
+````
 
 ---
 transition: fade
