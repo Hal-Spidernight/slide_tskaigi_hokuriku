@@ -4,11 +4,11 @@ using Http;
 @service(#{ title: "Sample" })
 namespace DemoService{
   model Additional {
-      sample: Record<unknown>
+      sample1: Record<unknown>;
   }
   
   model Unevaluated {
-      sample: {}
+      sample3: {}
   }
   @route("/sample")
   @tag("sample")
@@ -19,5 +19,3 @@ namespace DemoService{
   
   }  
 }
-
-

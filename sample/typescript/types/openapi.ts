@@ -25,10 +25,12 @@ export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
         Additional: {
-            sample: Record<string, never>;
+            sample1: {
+                [key: string]: unknown;
+            };
         };
         Unevaluated: {
-            sample: Record<string, never>;
+            sample3: Record<string, never>;
         };
     };
     responses: never;
