@@ -10,15 +10,15 @@ import type { AppType } from '../../backend/src/index'
 
 const client = hc<AppType>('http://localhost:3001/')
 
-client.api.users
-  .$post({
+onMounted(async () => {
+  const response = await client.api.users.$post({
     json: {
       name: 'Taro Yamada',
       email: 'sssssss@gmail.com',
       age: 25,
     },
-  })
-  .then((res) => {
-    console.log(res)
-  })
+  }).then((res) => res.json())
+
+  console.log(response.name)
+})
 </script>
