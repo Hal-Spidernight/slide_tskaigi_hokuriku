@@ -144,40 +144,38 @@ xychart-beta
 
 ## イメージ図
 
-```mermaid {scale: 0.465}
-sequenceDiagram
-    autonumber
-    actor FE as FEエンジニア
-    actor BE as BEエンジニア
-    participant Spec as API Spec<br/>(OpenAPI/Swagger等)
-    participant Output as 生成物<br/>(IF/Docs)
+<br/>
+<br/>
 
-    Note over FE, BE: 1. 範囲の合意<br/>FE: 構造と型定義 / BE: 振る舞いと実データ
+```mermaid {scale: 0.7}
+graph LR
+    %% ノードの定義
+    Step1["<b>1. 範囲の合意</b><br/>FE: 構造と型<br/>BE: 振る舞い"]
+    Step2["<b>2. FE: Specドラフト</b><br/>・API目的<br/>・Request(必須/Regex)<br/>・Response構造"]
+    Step3["<b>3. BE: 詳細追記</b><br/>・振る舞いの説明<br/>・Example(全パターン)<br/>・Error(4xx/5xx)"]
+    Step4["<b>4. FE: 最終確認</b><br/>・レビュー<br/>・合意＆マージ"]
+    Step5["<b>5. 自動生成</b><br/>・IF型定義<br/>・ドキュメント"]
 
-    rect rgb(30, 30, 30)
-    Note over FE, Spec: 2. Specのベース作成
-    FE->>Spec: 初期定義を作成
-    Note right of FE: ・APIの目的<br/>・Request (必須, Regex等)<br/>・Response (構造)
-    end
+    %% フローの接続
+    Step1 --> Step2
+    Step2 -- PR作成 --> Step3
+    Step3 -- 修正/Review --> Step4
+    Step4 --> Step5
 
-    rect rgb(30, 30, 30)
-    Note over BE, Spec: 3. レビュー & 詳細追記
-    Spec-->>BE: PR確認
-    BE->>Spec: 詳細情報をCommit
-    Note left of BE: ・振る舞いの詳細説明<br/>・Req/ResのExample (全パターン)<br/>・エラーパターン (4xx, 5xx)
-    end
+    %% スタイル定義（ダークモード用）
+    classDef default color:#fff,stroke-width:2px;
+    
+    %% FEのタスク（青系）
+    classDef fe fill:#0d47a1,stroke:#64b5f6;
+    %% BEのタスク（オレンジ/茶系）
+    classDef be fill:#e65100,stroke:#ffb74d;
+    %% 共通・システム（グレー系）
+    classDef common fill:#424242,stroke:#bdbdbd;
 
-    rect rgb(30, 30, 30)
-    Note over FE, Spec: 4. 最終確認
-    Spec-->>FE: 変更内容確認
-    FE->>BE: 合意 (Approve)
-    FE->>Spec: マージ
-    end
-
-    rect rgb(30, 30, 30)
-    Note over Spec, Output: 5. 生成
-    Spec->>Output: 型定義(IF)・ドキュメント生成
-    end
+    %% クラス適用
+    class Step2,Step4 fe;
+    class Step3 be;
+    class Step1,Step5 common;
 ```
 
 ---
