@@ -4,12 +4,15 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "openapi": "curl http://localhost:3001/docs >> ./openapi.json",
+    "build:docs": "npx redocly build-docs ./openapi.json --output=./docs/redocly.html"
   },
   "dependencies": {
     "@hono/node-server": "^1.19.6",
     "@hono/standard-validator": "^0.2.0",
     "@hono/zod-validator": "^0.7.5",
+    "@redocly/cli": "^2.11.1",
     "hono": "^4.10.6",
     "hono-openapi": "^1.1.1",
     "zod": "^4.1.12"
