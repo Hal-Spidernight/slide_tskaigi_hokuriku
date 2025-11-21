@@ -4,11 +4,11 @@
 
 ## トレードオフとなるもの
 
-| 変数           | 対称となる項目                    | 議論のポイント            |
-| -------------- | --------------------------------- | ------------------------- |
-| 担当する範囲   | FEエンジニア<->BEエンジニア       | Who(誰がどのくらいやるか) |
-| スキーマの起点 | 契約起点<->実装起点               | When(いつから変えるか)    |
-| コスト         | ベネフィット<->メンテナンスコスト | What(何を重視するか)      |
+| 変数         | 対称となる項目                    | 議論のポイント            |
+| ------------ | --------------------------------- | ------------------------- |
+| 担当する範囲 | FEエンジニア<->BEエンジニア       | Who(誰がどのくらいやるか) |
+| API IFの起点 | スキーマ<->実装                   | When(いつから変えるか)    |
+| コスト       | ベネフィット<->メンテナンスコスト | What(何を重視するか)      |
 
 ---
 transition: fade
@@ -63,11 +63,11 @@ xychart-beta
 
 ---
 
-### 3. コストバランス
+##### コストバランス
 
-<p v-drag="[579,31,184,52]" class="text-xs">青：スキーマ起点, 緑：実装起点</p>
+<p v-drag="[579,24,184,52]" class="text-xs">青：スキーマ起点, 緑：実装起点</p>
 
-<p v-click v-drag="[565,276,417,70]">開発フェーズが進むとAPI定義のサイクルが安定し、<br/>実装起点の方が効果的に進めやすくなる</p>
+<p v-drag="[565,276,417,70]">開発フェーズが進むとAPI定義のサイクルが安定し、<br/>実装起点の方が効果的に進めやすくなる</p>
 
 ```mermaid
 xychart-beta
@@ -81,26 +81,44 @@ xychart-beta
 
 ## そもそもインターフェースは誰が責任を持つものなのか？
 
-- APIを実装するのはBEだからBEエンジニアだ！→BEエンジニアに定義してもらったIFがFEで取り回しづらい構造だったらその都度修正してもらう？提案時点で実装の目処を立てている可能性もある
+<br/>
 
-- APIを使うのはFEだからFEエンジニアだ！→DB、実装の詳細を掴んでいない状況でのIFは突飛なものになる可能性がある
+#### APIを実装するのはBEだからBEエンジニアだ！
+
+→BEエンジニアに定義してもらったIFがFEで取り回しづらい構造だったらその都度修正してもらう？
+
+提案時点で実装の目処を立てている可能性もある
+
+<br/>
+
+#### APIを使うのはFEだからFEエンジニアだ！
+
+→DB、実装の詳細を掴んでいない状況でのIFは突飛なものになる可能性がある
 
 ---
 
 ## そもスキーマ駆動に求められるもの
 
-### FE
+<div class="flex justify-center items-center my-auto h-100 mt-5">
+   <SectionCard  style="width:50%" class="pa-3 mr-5">
+      <h4>FE</h4>
+      <ul>
+         <li>APIのIFを手動で定義せずに済むようになりたい</li>
+         <li>早くAPIのIFを合意取り、実装に進みたい</li>
+         <li>手戻りが少ない形でAPI部の実装を進めたい</li>
+      </ul>
+   </SectionCard>
 
-- APIのIFを手動で定義せずに済むようになりたい
-- 早くAPIのIFを合意取り、実装に進みたい
-- 手戻りが少ない形でAPI部の実装を進めたい
-
-### BE
-
-- FEが必要としているI/Oが知りたい
-- バリデーションすべき値を把握したい
-- APIによって何を果たしたいのか知りたい(もしかしたら要件レベルかも)
-- APIドキュメントのメンテナンスコストを下げたい
+   <SectionCard style="width:50%" class="pa-3">
+      <h4>BE</h4>
+      <ul>
+         <li>FEが必要としているI/Oが知りたい</li>
+         <li>バリデーションすべき値を把握したい</li>
+         <li>APIによって何を果たしたいのか知りたい(もしかしたら要件レベルかも)</li>
+         <li>APIドキュメントのメンテナンスコストを下げたい</li>
+      </ul>
+   </SectionCard>
+</div>
 
 ---
 
@@ -125,6 +143,42 @@ xychart-beta
 ---
 
 ## イメージ図
+
+```mermaid {scale: 0.465}
+sequenceDiagram
+    autonumber
+    actor FE as FEエンジニア
+    actor BE as BEエンジニア
+    participant Spec as API Spec<br/>(OpenAPI/Swagger等)
+    participant Output as 生成物<br/>(IF/Docs)
+
+    Note over FE, BE: 1. 範囲の合意<br/>FE: 構造と型定義 / BE: 振る舞いと実データ
+
+    rect rgb(30, 30, 30)
+    Note over FE, Spec: 2. Specのベース作成
+    FE->>Spec: 初期定義を作成
+    Note right of FE: ・APIの目的<br/>・Request (必須, Regex等)<br/>・Response (構造)
+    end
+
+    rect rgb(30, 30, 30)
+    Note over BE, Spec: 3. レビュー & 詳細追記
+    Spec-->>BE: PR確認
+    BE->>Spec: 詳細情報をCommit
+    Note left of BE: ・振る舞いの詳細説明<br/>・Req/ResのExample (全パターン)<br/>・エラーパターン (4xx, 5xx)
+    end
+
+    rect rgb(30, 30, 30)
+    Note over FE, Spec: 4. 最終確認
+    Spec-->>FE: 変更内容確認
+    FE->>BE: 合意 (Approve)
+    FE->>Spec: マージ
+    end
+
+    rect rgb(30, 30, 30)
+    Note over Spec, Output: 5. 生成
+    Spec->>Output: 型定義(IF)・ドキュメント生成
+    end
+```
 
 ---
 
