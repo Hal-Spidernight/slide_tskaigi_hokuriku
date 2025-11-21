@@ -1,6 +1,6 @@
 ---
 layout: image-right
-image: /images/icon.jpg
+image: /images/icon.webp
 backgroundSize: 70%
 class: font-bold
 ---

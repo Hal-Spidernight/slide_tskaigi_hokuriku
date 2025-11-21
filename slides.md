@@ -65,5 +65,6 @@ transition: fade
 
 ---
 
-<SectionTitle title="ご清聴ありがとうございました！"/>
+<img v-drag="[629,307,286,194]" src="/images/end.webp"/>
 
+<SectionTitle title="ご清聴ありがとうございました！"/>
