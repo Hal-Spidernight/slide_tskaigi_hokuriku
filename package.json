@@ -6,7 +6,7 @@
     "build": "slidev build",
     "build:gh_pages": "slidev build --base /slide_tskaigi_hokuriku/",
     "dev": "slidev --open",
-    "export": "slidev export"
+    "export": "slidev export --wait 100000 --with-clicks --dark"
   },
   "dependencies": {
     "@slidev/cli": "^52.8.0",
