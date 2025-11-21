@@ -6,21 +6,29 @@
 
 <br/>
 
-### フロントエンド→TypeScript,Nuxt
-
-### バックエンド→Node.js(TypeScript)
-
-### TypeSpecやOpenAPIはソース管理せず、自動生成のみ
+- フロントエンド→TypeScript,Nuxt
+- バックエンド→Hono(TypeScript)
+- TypeSpecやOpenAPIはソース管理せず、<span v-mark.red.circle>RPCで型を連携する</span>
+- APIドキュメントはバックエンドの実装からOpenAPIを生成->Redocly
 
 ---
 
 ### Appendix: HonoによるRPC運用
 
 https://hono.dev/docs/guides/rpc#client
----
 
-### RPCとは？
+<br/>
 
+引用:
+
+```text
+
+The RPC feature allows sharing of the API specifications between the server and the client.
+First, export the typeof your Hono app (commonly called AppType)—or just the routes you want available to the client—from your server code.
+
+RPC 機能を使うと、サーバーとクライアントの間で API 仕様を共有できます。
+まず、Hono アプリの typeof（一般的に AppType と呼ばれる）— もしくはクライアント側で利用可能にしたいルートだけ — をサーバー側のコードからエクスポートします。
+```
 
 ---
 
