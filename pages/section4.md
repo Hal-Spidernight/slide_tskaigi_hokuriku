@@ -16,9 +16,11 @@
 
 ### Appendix: HonoによるRPC運用
 
+https://hono.dev/docs/guides/rpc#client
 ---
 
 ### RPCとは？
+
 
 ---
 
