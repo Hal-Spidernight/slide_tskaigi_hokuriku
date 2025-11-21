@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
   title: AdditionalProperties Sample
   version: 1.0.0
@@ -33,5 +33,4 @@ components:
       required:
         - username
         - password
-      # ここで定義外のプロパティを禁止
-      additionalProperties: false
+      additionalProperties: true

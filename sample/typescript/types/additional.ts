@@ -54,6 +54,8 @@ export interface components {
              * @example secret123
              */
             password: string;
+        } & {
+            [key: string]: unknown;
         };
     };
     responses: never;

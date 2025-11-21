@@ -1,37 +1,46 @@
-openapi: 3.0.3
+openapi: 3.1.0
 info:
-  title: AdditionalProperties Sample
+  title: UnevaluatedProperties Sample
   version: 1.0.0
   description: |
-    Simple example where additional properties are strictly forbidden using `additionalProperties: false`.
+    Example using `allOf` inheritance where `unevaluatedProperties: false` ensures strict validation across combined schemas.
 paths:
-  /users:
+  /products:
     post:
-      summary: Create a user
+      summary: Create a product
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NewUser'
+              $ref: '#/components/schemas/DetailedProduct'
       responses:
         '201':
-          description: User created
+          description: Product created
 
 components:
   schemas:
-    NewUser:
+    # ベースとなるスキーマ
+    BaseEntity:
       type: object
       properties:
-        username:
+        id:
           type: string
-          example: "jdoe"
-        password:
-          type: string
-          format: password
-          example: "secret123"
+          format: uuid
       required:
-        - username
-        - password
-      # ここで定義外のプロパティを禁止
-      additionalProperties: false
+        - id
+
+    # ベースを継承しつつ、厳密に検証するスキーマ
+    DetailedProduct:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BaseEntity'
+        - type: object
+          properties:
+            name:
+              type: string
+            price:
+              type: number
+          required:
+            - name
+      unevaluatedProperties: true

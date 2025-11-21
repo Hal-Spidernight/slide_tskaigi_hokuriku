@@ -4,7 +4,7 @@
  */
 
 export interface paths {
-    "/users": {
+    "/products": {
         parameters: {
             query?: never;
             header?: never;
@@ -13,7 +13,7 @@ export interface paths {
         };
         get?: never;
         put?: never;
-        /** Create a user */
+        /** Create a product */
         post: {
             parameters: {
                 query?: never;
@@ -23,11 +23,11 @@ export interface paths {
             };
             requestBody: {
                 content: {
-                    "application/json": components["schemas"]["NewUser"];
+                    "application/json": components["schemas"]["DetailedProduct"];
                 };
             };
             responses: {
-                /** @description User created */
+                /** @description Product created */
                 201: {
                     headers: {
                         [name: string]: unknown;
@@ -46,14 +46,13 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
-        NewUser: {
-            /** @example jdoe */
-            username: string;
-            /**
-             * Format: password
-             * @example secret123
-             */
-            password: string;
+        BaseEntity: {
+            /** Format: uuid */
+            id: string;
+        };
+        DetailedProduct: components["schemas"]["BaseEntity"] & {
+            name: string;
+            price?: number;
         };
     };
     responses: never;

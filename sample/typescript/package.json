@@ -1,18 +1,25 @@
 {
   "name": "typescript",
-  "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build:types": "pattern=unevaluated pnpm build:type && pattern=additional pnpm build:type",
-    "build:type": "openapi-typescript ./schemas/$pattern.yaml --output ./types/$pattern.ts"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:types": "pnpm compile && pattern=unevaluated pnpm build:type && pattern=additional pnpm build:type && pattern=openapi pnpm build:type",
+    "build:type": "openapi-typescript ./schemas/$pattern.yaml --output ./types/$pattern.ts",
+    "compile": "tsp compile ."
+  },
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
   "dependencies": {
-    "openapi-typescript": "^7.10.1"
+    "openapi-typescript": "^7.10.1",
+    "@typespec/compiler": "latest",
+    "@typespec/http": "latest",
+    "@typespec/rest": "latest",
+    "@typespec/openapi": "latest",
+    "@typespec/openapi3": "latest"
   }
 }
