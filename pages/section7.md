@@ -1,3 +1,5 @@
-<SectionCard>
-<h2>PR</h2>
+<SectionCard class="px-6">
+    <h3>PR</h3>
+    <img src="/images/pr.png"/>
+
 </SectionCard>

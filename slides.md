@@ -1,9 +1,12 @@
 ---
 # try also 'default' to start simple
-theme: "slidev-theme-hal"
+theme: "../theme"
 themeConfig:
   company: 株式会社LIXIL
   author: Hal
+  logo: "./images/tskaigi.svg"
+  logoWidth: "180px"
+
 # some information about your slides (markdown enabled)
 title: |
   "TSのAPI型安全"の対価は誰が払う？
@@ -63,6 +66,4 @@ transition: fade
 ---
 
 <SectionTitle title="ご清聴ありがとうございました！"/>
-
----
 

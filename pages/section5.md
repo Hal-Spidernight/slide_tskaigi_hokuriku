@@ -428,16 +428,3 @@ type SampleResponse struct {
 一気に実装まで進めてしまった方が良い。
 
 ただし、実装するAPIを別featureで再利用したいケースもあるので関係者と確認しながらIFクラス実装を先行させる。
-
----
-
-## Appendix: Spring Boot実装からOpenAPIの生成
-
-### DTO(Data Transfer Object)の場合
-```java
-//Spring Boot REST APIのDTOからOpenAPIへの変換サンプルを書く
-```
-### POJO(Plain Old Java Object)の場合
-```java
-//Spring Boot REST APIのPOJOからOpenAPIへの変換サンプルを書く
-```

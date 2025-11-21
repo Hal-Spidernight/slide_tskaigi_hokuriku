@@ -32,7 +32,16 @@ RPC 機能を使うと、サーバーとクライアントの間で API 仕様�
 
 ---
 
-### 実装イメージ
+### 実装イメージ(Hono)
+
+<<< ./hono-sample/index.ts {monaco} {height:'430px'}
+
+---
+
+### 実装イメージ(Nuxt)
+
+<<< ./hono-sample/app.vue {monaco} {height:'430px'}
+
 
 ---
 transition: fade
