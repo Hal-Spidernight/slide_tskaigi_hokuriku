@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: "../theme"
+theme: "slidev-theme-hal"
 themeConfig:
   company: 株式会社LIXIL
   author: Hal
