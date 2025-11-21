@@ -11,8 +11,8 @@
       :leave="{ y: 50 }"
     >
       <h5 class="font-bold">{{ factor.title }}</h5>
-      <ul class="mt-4">
-        <li v-for="(description, idx) in factor.descriptions" :key="idx" class="text-sm">{{ description }}</li>
+      <ul class="mt-4 text-xs">
+        <li v-for="(description, idx) in factor.descriptions" :key="idx">{{ description }}</li>
       </ul>
     </SectionCard>
   </div>

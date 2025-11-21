@@ -6,7 +6,8 @@
 </template>
 <script setup lang="ts">
 import { hc } from 'hono/client'
-import type { AppType } from '../../backend/src/index'
+import { onMounted } from 'vue'
+import type { AppType } from '../backend/index'
 
 const client = hc<AppType>('http://localhost:3001/')
 
