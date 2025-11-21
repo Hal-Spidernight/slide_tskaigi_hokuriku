@@ -1,0 +1,18 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:types": "pattern=unevaluated pnpm build:type && pattern=additional pnpm build:type",
+    "build:type": "openapi-typescript ./schemas/$pattern.yaml --output ./types/$pattern.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "openapi-typescript": "^7.10.1"
+  }
+}

@@ -1,0 +1,37 @@
+openapi: 3.0.3
+info:
+  title: AdditionalProperties Sample
+  version: 1.0.0
+  description: |
+    Simple example where additional properties are strictly forbidden using `additionalProperties: false`.
+paths:
+  /users:
+    post:
+      summary: Create a user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUser'
+      responses:
+        '201':
+          description: User created
+
+components:
+  schemas:
+    NewUser:
+      type: object
+      properties:
+        username:
+          type: string
+          example: "jdoe"
+        password:
+          type: string
+          format: password
+          example: "secret123"
+      required:
+        - username
+        - password
+      # ここで定義外のプロパティを禁止
+      additionalProperties: false

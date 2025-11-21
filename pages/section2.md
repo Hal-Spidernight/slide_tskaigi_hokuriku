@@ -1,6 +1,7 @@
 ## 考えるべきポイント
 
 <ConsiderFactors/>
+<SectionTitle v-click style="position:absolute;top:0;left:0; background:#000b" :title="'そのSDD、FE・設計の負荷を\r\nBEにシフトしているだけになっていませんか？'"/>
 
 ---
 
@@ -24,7 +25,7 @@
 #### 解決するためのポイント
 
 1. スキーマ運用を適用するのはAPIのリリースサイクルが安定してから
-2. チームタスクの優先順位を確認し、「今やるべきか」を判断する
+2. チームタスクの優先順位を確認し、<span v-mark.red>「今やるべきか」を判断する</span>
    - コミュニケーションコストがかさんできたら適用できるタイミング
 
 ---
@@ -40,7 +41,7 @@ OpenAPIの定義は長くなりがちで、Schemaコンポーネントのパス�
 1. OpenAPIはjson,ymlで書いた際に神ファイルになりがち
    - 分割する際のクセが強い
 2. コンポーネント別にファイルを分割するとトラッキングできなくなることも
-3. OpenAPIは生でメンテナンスしない方が良いかもしれない
+3. <span v-mark.yellow>OpenAPIは生でメンテナンスしない方が良いかもしれない</span>
 
 <br/>
 
@@ -52,7 +53,24 @@ OpenAPIの定義は長くなりがちで、Schemaコンポーネントのパス�
 
 ---
 
-### 2-a. EdgeCase: OpenAPI 3.1.0で空Object定義すると `unevaluatedProperties` として評価されてしまう
+### Edge Case 1. OpenAPI 3.1.0 `unevaluatedProperties`を利用すると、TypeScriptの型生成で`Record<never>`に変換される
+
+### 解説
+
+OpenAPIからTypeScriptの型を生成する際には [openapi-typescript](https://github.com/openapi-ts/openapi-typescript)というライブラリを使う。
+このライブラリではunevaluatedPropertiesを`Record<never>`として変換してしまい、使い勝手が悪いケースがある。
+
+<br/>
+
+### 解決策→ `additionalProperties` を使う
+
+```ts
+//Record<unknown> として評価される
+```
+
+---
+
+### Edge Case 2. TypeSpec & OpenAPIで空Object定義すると `unevaluatedProperties` として評価されてしまう
 
 ### 解説
 
