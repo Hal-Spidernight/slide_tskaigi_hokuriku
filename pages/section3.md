@@ -1,4 +1,4 @@
-<SectionTitle title="SDDの変化するトレードオフ" />
+<SectionTitle title="変化するトレードオフ" />
 
 ---
 
