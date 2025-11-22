@@ -15,8 +15,12 @@
 ### マルチレポの場合
 
 - **スキーマの更新をどのように各レイヤーのエンジニアに通知するか？**
-- Hono RPCのようなモノレポ前提の運用は難しくなる(Enterprise PackageやコンテナイメージPull等での解決は一応できる)
-- 型同期のインフラ整備が手間かかる(CI等でのチェックなど)
+- Hono RPCのようなモノレポ前提の運用は難しくなる
+  - Enterprise PackageやコンテナイメージPull等での解決は一応できる
+- 型同期のインフラ整備が手間かかる
+  - CI等でのチェックなど
+
+<SectionTitle v-click style="position:absolute;top:0;left:0; background:#000b" title="規模に合わせた自動化を"/>
 
 ---
 
