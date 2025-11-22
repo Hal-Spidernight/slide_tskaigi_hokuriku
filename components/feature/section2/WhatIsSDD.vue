@@ -23,7 +23,7 @@
       :enter="{ y: 0 }"
       :leave="{ y: 20 }"
     >
-      {{ '中間の定義を最初に作ることで解消を図る \r\n → スキーマ駆動開発 (Schema Driven Development)' }}
+      {{ 'インターフェース(IF)の定義を最初に作ることで解消を図る \r\n → スキーマ駆動開発 (Schema Driven Development)' }}
     </h2>
   </SectionCard>
 </template>

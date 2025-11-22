@@ -1,8 +1,10 @@
-<SectionTitle title="スキーマ駆動開発のトレードオフ構造" />
+<SectionTitle title="スキーマ駆動開発の変化するトレードオフ" />
 
 ---
 
 ## トレードオフとなるもの
+
+<br/>
 
 | 変数         | 対称となる項目                    | 議論のポイント            |
 | ------------ | --------------------------------- | ------------------------- |
@@ -16,7 +18,7 @@ transition: fade
 
 ##### スキーマを使わない開発
 
-<p v-drag="[674,27,93,52]" class="text-xs">青：FE, 緑：BE</p>
+<p v-drag="[661,24,99,40]" class="text-xs">青：FE, 緑：BE</p>
 ```mermaid
 xychart-beta
     x-axis "担当範囲" ["DB設計", "API設計", "BE実装", "FE実装", "結合(手戻り)"]
@@ -25,7 +27,9 @@ xychart-beta
     line [90, 90, 80, 10, 80]
 ```
 
-<p v-drag="[703,326,264,52]">結合で手戻りが大きくなりやすい</p>
+<p v-drag="[134,351,249,52]">関与度が低いほど負荷が少ない</p>
+
+<h4 v-drag="[732,183,163,52]" class="text-center">{{"結合で手戻りが\t\n大きくなりやすい"}}</h4>
 
 ---
 transition: fade
@@ -33,7 +37,7 @@ transition: fade
 
 ##### 中間言語を用いたSDDにおけるコストシフト
 
-<p v-drag="[610,24,150,52]" class="text-xs">青：FE, 緑：BE</p>
+<p v-drag="[662,24,98,52]" class="text-xs">青：FE, 緑：BE</p>
 ```mermaid
 xychart-beta
     x-axis "担当範囲" ["DB設計", "API設計", "BE実装", "FE実装", "結合(スキーマ)", "結合(実装)"]
@@ -46,9 +50,9 @@ xychart-beta
 
 ---
 
-##### APIの設計をインターフェース、詳細で分離し、FEが関与しやすくする
+##### API設計をIF・詳細で分離し、FEが関与できる範囲を広げる
 
-<p v-drag="[610,24,150,52]" class="text-xs">青：FE, 緑：BE</p>
+<p v-drag="[662,24,98,52]" class="text-xs">青：FE, 緑：BE</p>
 ```mermaid
 xychart-beta
     x-axis "担当範囲" ["DB設計", "API IF設計", "API 詳細設計", "BE実装", "FE実装", "結合(スキーマ)", "結合(実装)"]
