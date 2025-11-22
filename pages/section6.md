@@ -38,7 +38,7 @@
         <SectionCard class="pa-2 ml-2">
             <h3>導入するときはチーム、特にBEエンジニアとよく相談して合意を取ろう</h3>
             <ul class="mt-2 text-xl">
-                <li v-mark.yellow.circle>Win-Winの関係を目指す</li>
+                <li v-mark.yellow.circle>Positive-Sumを目指す</li>
                 <li>「これはどちらがやった方が早いか？」という視点</li>
             </ul>
         </SectionCard>
