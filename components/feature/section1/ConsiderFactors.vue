@@ -30,7 +30,7 @@ const factorItems = [
     ],
   },
   {
-    title: '何を真実のソースとするか',
+    title: '何を「信頼できる唯一の情報源」とするか',
     descriptions: ['OpenAPI? TypeSpec? 実装？', '実装よりもスキーマを優先させる運用が重要'],
   },
   {
