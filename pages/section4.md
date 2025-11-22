@@ -156,13 +156,19 @@ onMounted(async () => {
 transition: fade
 ---
 
-<SectionTitle :title="'FE,BEどちらともTypeScriptなら同じスキルセットで\r\nメンテできるのでコストパフォーマンスが高いので \r\n BEにはNode.jsを採用しよう！'"/>
+<SectionTitle :title="'FE,BEどちらともTypeScriptなら同じスキルセットで\r\nメンテできるのでコストパフォーマンスが高い！'"/>
 
 ---
 transition: fade
 ---
 
-<SectionTitle title="〜第３部 完〜" />
+<SectionTitle title="BEにはNode.jsを積極的に採用しよう！"/>
+
+<div v-click v-drag="[796,398,88,96]" class="text-center font-bold w-75">
+  <h3 >終</h3>
+  <hr class="my-2"/>
+  <p class="my-0">H  A  L</p>
+</div>
 
 ---
 transition: fade
@@ -197,7 +203,7 @@ transition: fade
     - Error Typeの識別
         - なんだかんだカスタムエラー型を作ることが多い
     - Promiseのスタックトレースが消える問題
-        - ハンドリングの仕方によってerror.stackが消えるのでだいぶ気を付ける必要がある(昔よりはマシらしい)
+        - ハンドリングの仕方によってerror.stackが消えるのでだいぶ気を付ける必要がある
 
 <br/>
 

@@ -87,9 +87,9 @@ xychart-beta
    <SectionCard  style="width:50%" class="pa-3 mr-5">
       <h4>FE</h4>
       <ul>
-         <li>APIのIFを手動で定義せずに済むようになりたい</li>
-         <li>早くAPIのIFを合意取り、実装に進みたい</li>
-         <li>手戻りが少ない形でAPI部の実装を進めたい</li>
+         <li>API IFのメンテコストを下げたい</li>
+         <li>早くAPI IFの合意を取り、実装に進みたい</li>
+         <li>手戻りが少ない形でAPI連携部の実装を進めたい</li>
       </ul>
    </SectionCard>
 
@@ -99,7 +99,7 @@ xychart-beta
          <li>FEが必要としているI/Oが知りたい</li>
          <li>バリデーションすべき値を把握したい</li>
          <li>APIによって何を果たしたいのか知りたい(もしかしたら要件レベルかも)</li>
-         <li>APIドキュメントのメンテナンスコストを下げたい</li>
+         <li>APIドキュメントのメンテコストを下げたい</li>
          <li>手戻りが少ない形で実装を進めたい</li>
       </ul>
    </SectionCard>
@@ -190,7 +190,7 @@ graph LR
 
 <br/>
 
-<h3 v-drag="[322,380,339,56]" class="text-center">規模に合った運用設計を！</h3>
+<h3 v-drag="[322,380,339,56]" class="text-center" v-mark.yellow.circle>規模に合った運用設計を！</h3>
 
 ---
 
