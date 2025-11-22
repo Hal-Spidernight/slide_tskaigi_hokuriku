@@ -14,7 +14,7 @@
 
 ---
 
-<SectionTitle :title="'担当範囲とコストの関係'"/>
+<SectionTitle title="担当範囲とコスト"/>
 
 ---
 transition: fade
@@ -146,7 +146,6 @@ transition: fade
 
 ## 提案する運用アプローチ
 
-<v-clicks>
    <div class="mt-4 mb-2">
       <h4>1. 両者が持つ範囲を決める</h4>
       <ul class="text-sm ml-5">
@@ -155,8 +154,8 @@ transition: fade
       </ul>
    </div>
 
-   <div class="my-1">
-      <h4>2. FEエンジニアがまずspecを作成し、以下情報を書く</h4>
+   <div v-click class="my-1">
+      <h4>2. FEエンジニアがまずspecを作成し、抽象を追加する</h4>
       <ul class="text-sm ml-5">
          <li>APIの目的</li>
          <li>リクエスト（必須、文字数、Regex等も）</li>
@@ -164,8 +163,8 @@ transition: fade
       </ul>
    </div>
 
-   <div class="my-1">
-      <h4>3. BEエンジニアがレビューし、commitを追加する</h4>
+   <div v-click class="my-1">
+      <h4>3. BEエンジニアがレビューし、具体を追加する</h4>
       <ul class="text-sm ml-5">
          <li>APIの振る舞いの詳細な説明</li>
          <li>リクエスト・レスポンスのexample(複数パターンある場合は全て追加)</li>
@@ -173,10 +172,9 @@ transition: fade
       </ul>
    </div>
 
-   <h4 class="my-1">4. FEエンジニアがレビューし、合意が取れたらマージする</h4>
+   <h4 v-click class="my-1">4. FEエンジニアがレビューし、合意が取れたらマージする</h4>
 
-   <h4 class="my-1">5. IF、ドキュメントを生成する</h4>
-</v-clicks>
+   <h4 v-click class="my-1">5. IF、ドキュメントを生成する</h4>
 
 ---
 
@@ -229,7 +227,7 @@ graph LR
 
 ---
 
-<SectionTitle :title="'コストバランスと「スキーマ運用の設計合意=契約」\r\n をどう考えるか'"/>
+<SectionTitle title="IFの起点とコスト"/>
 
 ---
 
@@ -237,16 +235,12 @@ graph LR
 
 <br/>
 
-1. コストが利点を上回っていない
+1. 開発フェーズとマッチしていない
    - セットアップ、学習、運用コストに対して生成されるIFが少ない
-   - 一人でFE,BEどちらとも面倒を見ている
-2. コストそのものが高すぎる
-   - OpenAPIを保守し続けるのは結構大変
+   - 一人でFE,BEどちらとも面倒を見ている場合は必要か？
    - 小規模ならCIは大げさ、大規模なら手動同期は手間がかかりすぎる
-
-<br/>
-
-<h3 v-drag="[322,380,339,56]" class="text-center" v-mark.yellow.circle>規模に合った運用設計を！</h3>
+2. コストそのものが高すぎる
+   - OpenAPIを生のまま保守し続けるのは結構大変
 
 ---
 
@@ -290,4 +284,4 @@ transition: fade
 transition: fade
 ---
 
-<SectionTitle title="コストが小さく抑えられる構成は？"/>
+<SectionTitle :title="'コストバランスと「スキーマ運用の設計合意=契約」\r\n をどう考えるか'"/>
