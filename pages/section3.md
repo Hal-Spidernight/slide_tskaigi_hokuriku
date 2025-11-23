@@ -261,7 +261,7 @@ transition: fade
 
 <br/>
 
-<h3 class="font-bold">人<span class="ml-4 text-sm">チーム・プロダクト・スキルセットにマッチしていない</span></h3>
+<h3 v-mark.white class="font-bold">人<span class="ml-4 text-sm">チーム・プロダクト・スキルセットにマッチしていない</span></h3>
 
 - セットアップ、学習、運用コストに対して生成されるIFが少ない
 - FE,BEどちらが担当した方がより早いか
@@ -270,13 +270,13 @@ transition: fade
 
 <br/>
 
-<h3 class="font-bold">時間軸<span class="ml-4 text-sm">開発フェーズとマッチしていない</span></h3>
+<h3 v-mark.white class="font-bold">時間軸<span class="ml-4 text-sm">開発フェーズとマッチしていない</span></h3>
 
 - 時間軸と優先するソースでROIは大きく変わる
 
 <br/>
 
-<h3 class="font-bold">絶対的コスト<span class="ml-4 text-sm">コストそのものが高すぎる</span></h3>
+<h3 v-mark.white class="font-bold">絶対的コスト<span class="ml-4 text-sm">コストそのものが高すぎる</span></h3>
 
 - OpenAPIを生のまま保守し続けるのは結構大変
 
