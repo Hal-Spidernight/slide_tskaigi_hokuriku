@@ -1,16 +1,22 @@
 <SectionTitle title="PLAN-A: TypeScript環境で固める" />
 
 ---
+class: font-bold
+---
 
 ## フロントエンド、バックエンドどちらともTypeScriptを使う
 
 <br/>
 
-- フロントエンド→TypeScript,Nuxt
-- バックエンド→Hono(TypeScript)
-- TypeSpecやOpenAPIはソース管理せず、<span v-mark.red.circle>RPCで型を連携する</span>
-- APIドキュメントはバックエンドの実装からOpenAPIを生成->Redocly
+<ul class="text-xl font-bold">
+  <li>フロントエンド→TypeScript,Nuxt</li>
+  <li>バックエンド→Hono(TypeScript)</li>
+  <li>TypeSpecやOpenAPIはソース管理せず、<span v-mark.red.circle>RPCで型を連携する</span></li>
+  <li>APIドキュメントはバックエンドの実装からOpenAPIを生成->Redocly</li>
+</ul>
 
+---
+class: font-bold
 ---
 
 ### Appendix: HonoによるRPC運用
@@ -21,15 +27,17 @@ https://hono.dev/docs/guides/rpc#client
 
 引用:
 
-```text
 
-The RPC feature allows sharing of the API specifications between the server and the client.
-First, export the typeof your Hono app (commonly called AppType)—or just the routes you want available to the client—from your server code.
+>The RPC feature allows sharing of the API specifications between the server and the client.
+>First, export the typeof your Hono app (commonly called AppType)—or just the routes you want available to the client—from your server code.
 
-RPC 機能を使うと、サーバーとクライアントの間で API 仕様を共有できます。
-まず、Hono アプリの typeof（一般的に AppType と呼ばれる）— もしくはクライアント側で利用可能にしたいルートだけ — をサーバー側のコードからエクスポートします。
-```
+<br/>
 
+>RPC 機能を使うと、サーバーとクライアントの間で API 仕様を共有できます。
+>まず、Hono アプリの typeof（一般的に AppType と呼ばれる）— もしくはクライアント側で利用可能にしたいルートだけ — をサーバー側のコードからエクスポートします。
+
+---
+class: font-bold
 ---
 
 #### 実装イメージ(Hono)
@@ -116,6 +124,8 @@ export type AppType = typeof routes
 ````
 
 ---
+class: font-bold
+---
 
 #### 実装イメージ(Nuxt)
 
@@ -154,12 +164,14 @@ onMounted(async () => {
 
 ---
 transition: fade
+class: font-bold
 ---
 
 <SectionTitle :title="'FE,BEどちらともTypeScriptなら同じスキルセットで\r\nメンテできるのでコストパフォーマンスが高い！'"/>
 
 ---
 transition: fade
+class: font-bold
 ---
 
 <SectionTitle title="BEにはNode.jsを積極的に採用しよう！"/>
@@ -172,10 +184,13 @@ transition: fade
 
 ---
 transition: fade
+class: font-bold
 ---
 
 <SectionTitle title="...🤔" />
 
+---
+class: font-bold
 ---
 
 ## バックエンドにTypeScriptを選ぶ時の注意点
@@ -197,6 +212,8 @@ transition: fade
 - どうしても重い処理をやる必要があるならマルチスレッド化が必要
   - Worker Threads の特徴を理解する
 
+---
+class: font-bold
 ---
 
 ### エラーハンドリングが辛い
@@ -221,6 +238,7 @@ transition: fade
 
 ---
 transition: fade
+class: font-bold
 ---
 
 <SectionTitle :title="'言語を統一しない場合は\r\nどのようなアプローチが取れるか？'" />

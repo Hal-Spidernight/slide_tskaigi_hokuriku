@@ -1,6 +1,8 @@
 <SectionTitle title="PLAN-B: 異種間言語連携のハイブリッド戦略" />
 
 ---
+class: font-bold
+---
 
 ## 戦略の前提
 
@@ -13,6 +15,8 @@
 
 ### いくつかの事例別に適用方法を紹介
 
+---
+class: font-bold
 ---
 
 ## A. 新規プロダクトのMVPが見えているスケール案件
@@ -36,6 +40,8 @@
 - 新たに実装するAPIの数自体は少ない
   - アジャイル開発の場合、１フェーズで大量に機能をリリースすることは珍しい
 
+---
+class: font-bold
 ---
 
 ## Aへの提案： FastAPIのRouter実装を調整してOpenAPIファイル&TypeScriptの型を生成
@@ -77,6 +83,8 @@ graph LR
 
 ```
 
+---
+class: font-bold
 ---
 
 ### e.g.
@@ -133,6 +141,8 @@ def read_root(sample_request:SampleRequest):
 ```
 ````
 
+---
+class: font-bold
 ---
 
 ````md magic-move {lines: true}

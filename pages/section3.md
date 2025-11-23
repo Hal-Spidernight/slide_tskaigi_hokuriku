@@ -1,6 +1,8 @@
 <SectionTitle title="変化するトレードオフ" />
 
 ---
+class: font-bold
+---
 
 ## トレードオフとなるもの
 
@@ -18,6 +20,7 @@
 
 ---
 transition: fade
+class: font-bold
 ---
 
 ##### スキーマを使わない開発
@@ -42,6 +45,7 @@ xychart-beta
 
 ---
 transition: fade
+class: font-bold
 ---
 
 ##### 中間言語を用いたSDDにおけるコストシフト
@@ -62,6 +66,8 @@ xychart-beta
    <p>BE: 340(-2.8%)</p>
 </div>
 
+---
+class: font-bold
 ---
 
 ##### API設計をIF・詳細で分離し、FEが関与できる範囲を広げる
@@ -84,6 +90,8 @@ xychart-beta
 
 <SectionTitle v-click style="z-index:500;position:absolute;top:0;left:0;background:#000c" title="ただしスキーマのメンテ・学習コストは考慮されていない" />
 
+---
+class: font-bold
 ---
 
 ## Pose a question(問いかけ):
@@ -108,14 +116,19 @@ xychart-beta
 
 ---
 transition: fade
+class: font-bold
 ---
 
 <SectionTitle :title="'担当範囲の調整・工程の入れ替えによって\r\nコストが少し下がることがわかった。'"/>
 
 ---
+class: font-bold
+---
 
 <SectionTitle :title="'では具体的にどうする？'"/>
 
+---
+class: font-bold
 ---
 
 ## 確認：スキーマ駆動に求められるもの
@@ -143,14 +156,16 @@ transition: fade
 </div>
 
 ---
+class: font-bold
+---
 
 ## 提案する運用アプローチ
 
    <div class="mt-4 mb-2">
       <h4>1. 両者が持つ範囲を決める</h4>
       <ul class="text-sm ml-5">
-         <li>FE: APIの主目的、リクエスト・レスポンスと「各項目の説明」→<span v-mark.red>抽象</span></li>
-         <li>BE: APIの振る舞いについての説明、リクエスト・レスポンスの返却パターン→<span v-mark.yellow>具体</span></li>
+         <li>FE: APIの主目的、リクエスト・レスポンスと「各項目の説明」→<span class="text-xl" v-mark.red>抽象</span></li>
+         <li>BE: APIの振る舞いについての説明、リクエスト・レスポンスの返却パターン→<span class="text-xl" v-mark.yellow>具体</span></li>
       </ul>
    </div>
 
@@ -176,6 +191,8 @@ transition: fade
 
    <h4 v-click class="my-1">5. IF、ドキュメントを生成する</h4>
 
+---
+class: font-bold
 ---
 
 ## イメージ図
@@ -223,12 +240,14 @@ graph LR
 - エンジニアが互いのレイヤーを触れないチームでは実現できないことがある
   - セキュリティ、スキルセット、チームの事情etc.
 
-<p v-drag="[238,467,524,57]" class="font-bold text-center">このパターンは中間言語を使わない場合でも適用可能</p>
+<h3 v-drag="[214,484,610,57]" class="font-bold text-center">このパターンは中間言語を使わない場合でも適用可能</h3>
 
 ---
 
 <SectionTitle title="IFの起点とコスト"/>
 
+---
+class: font-bold
 ---
 
 ##### コストのシフト
@@ -249,12 +268,14 @@ xychart-beta
 
 ---
 transition: fade
+class: font-bold
 ---
 
 <SectionTitle :title="'A. 多少のオーバーヘッドを飲み込み、固定して進める \r\n \r\n B. フェーズに応じて計画的に移行する'"/>
 
 ---
 transition: fade
+class: font-bold
 ---
 
 ## 要約： コストがベネフィットを上回る原因
