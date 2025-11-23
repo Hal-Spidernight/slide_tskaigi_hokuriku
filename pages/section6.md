@@ -1,6 +1,8 @@
 <SectionTitle title="モノレポ・マルチレポそれぞれのメンテコスト" />
 
 ---
+class: font-bold
+---
 
 ## モノレポ・マルチレポでスキーマのメンテコストは変わる
 
@@ -27,10 +29,12 @@
 <SectionTitle title="まとめ"/>
 
 ---
+class: font-bold
+---
 
 ### まとめ
 
-<div>
+<div class="font-bold">
     <div class="flex" style="height:16rem">
         <SectionCard class="pa-2">
             <h3 class="whitespace-pre-wrap">{{"SDDのコスト効果はチーム背景と\r\n時間軸によって複雑に変化する"}}</h3>

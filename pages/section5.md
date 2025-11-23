@@ -235,6 +235,8 @@ def read_root(sample_request:SampleRequest):
 ````
 
 ---
+class: font-bold
+---
 
 ## 特徴
 
@@ -248,6 +250,8 @@ def read_root(sample_request:SampleRequest):
   <li>ymlを使う場合はPyYML等でparse</li>
 </ul>
 
+---
+class: font-bold
 ---
 
 ## B. レガシーシステムのAPIを整理して再定義し直す刷新案件
@@ -270,6 +274,8 @@ def read_root(sample_request:SampleRequest):
 - バックエンドはイチから構築し直す(現行コードの流用が困難であるケースを想定)
   - 現行の振る舞いを検証するため、<span v-mark="{ at: 1, color: 'rgba(221, 221, 0, 1)', type: 'circle' }">FEとの開発にタイムラグがある</span>
 
+---
+class: font-bold
 ---
 
 ## Bへの提案： 開発フェーズの進度で優先比率を変える
@@ -299,6 +305,8 @@ def read_root(sample_request:SampleRequest):
 
 Spec定義は全て廃止。実装優先にする
 
+---
+class: font-bold
 ---
 
 ### イメージ
@@ -344,6 +352,8 @@ graph LR
 </ul>
 </div>
 
+---
+class: font-bold
 ---
 
 ### Appendix: OpenAPIからGoのIF生成
@@ -408,6 +418,8 @@ type SampleResponse struct {
 <p v-click.hide="1" v-drag="[253,135,493,49]"><u>oapi-codegenは現時点でOpenAPI3.1.0に完全対応していない</u></p>
 
 ---
+class: font-bold
+---
 
 ## C. FE・BEどちらとも一人で面倒見る機能拡張案件
 
@@ -425,6 +437,8 @@ type SampleResponse struct {
 - 必ずしも個人開発でなく、feature別に割り振られるケースもある。
 - 比較的開発サイクルは落ち着いている
 
+---
+class: font-bold
 ---
 
 ## Cへの提案： 実装優先。
@@ -446,9 +460,13 @@ type SampleResponse struct {
 ただし、実装するAPIを別featureで再利用したいケースもあるので関係者と確認しながらIF実装を先行させる。
 
 ---
+class: font-bold
+---
 
 ## 特徴
 
-- エンジニアは実装に注力できる
-- コミュニケーション自体が少ない開発体制
-- 他機能でも再利用するAPIは注意が必要
+<ul class="font-bold text-xl">
+  <li>エンジニアは実装に注力できる</li>
+  <li>コミュニケーション自体が少ない開発体制</li>
+  <li>他機能でも再利用するAPIは注意が必要</li>
+</ul>
