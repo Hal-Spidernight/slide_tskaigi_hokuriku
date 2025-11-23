@@ -112,7 +112,7 @@ class: font-bold
 
 →DB、実装の詳細を掴んでいない状況でのIFは突飛なものになる可能性がある
 
-<h3 v-click v-drag="[257,422,497,65]" class="text-center font-bold">少なくともチーム内でこの問いかけに対する回答を持ってほしい</h3>
+<h3 v-click v-drag="[257,422,497,65]" class="text-center font-bold" v-mark.red>少なくともチーム内でこの問いかけに対する回答を持ってほしい</h3>
 
 ---
 transition: fade
