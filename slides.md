@@ -1,12 +1,12 @@
 ---
 # try also 'default' to start simple
-theme: "slidev-theme-hal"
+theme: 'slidev-theme-hal'
 # theme: ../theme
 themeConfig:
   company: 株式会社LIXIL
   author: Hal
-  logo: "./images/tskaigi.svg"
-  logoWidth: "180px"
+  logo: './images/tskaigi.svg'
+  logoWidth: '180px'
 
 # some information about your slides (markdown enabled)
 title: |
@@ -16,7 +16,7 @@ title: |
 info: |
   TSKaigi Hokurikuで発表するスライドです
 # apply UnoCSS classes to the current slide
-class: "text-center font-bold"
+class: 'text-center font-bold'
 # https://sli.dev/features/drawing
 drawings:
   persist: true
@@ -27,6 +27,16 @@ mdc: true
 # duration of the presentation
 duration: 30min
 ---
+
+---
+
+## 本日のスライド
+
+<div class="pa-0 flex justify-center items-center">
+  <img class="h-100" src="/images/qr_slide.png"/>
+</div>
+
+Powered by [Slidev](https://sli.dev/)
 
 ---
 level: 1
