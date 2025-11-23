@@ -33,10 +33,15 @@ duration: 30min
 ## 本日のスライド
 
 <div class="pa-0 flex justify-center items-center">
-  <img class="h-100" src="/images/qr_slide.png"/>
+  <div class="mr-2">
+    <p>Powered by <a href="https://sli.dev/" target="_blank">Slidev</a></p>
+    <img class="h-100" src="/images/qr_slide.png"/>
+  </div>
+  <div class="ml-2">
+    <p>Speaker Deck</p>
+    <img class="h-100" src="/images/qr_speakerdeck.png"/>
+  </div>
 </div>
-
-Powered by [Slidev](https://sli.dev/)
 
 ---
 level: 1
