@@ -238,11 +238,15 @@ def read_root(sample_request:SampleRequest):
 
 ## 特徴
 
-- 先にrouter,modelを作ることでFEとの競合を抑える
-- 既にある実装を再利用できるためオーバーヘッドが少ない
-- OpenAPIの対応自体は数行の追加で可能
-- modelの情報はFieldの引数に追加
-- ymlを使う場合はPyYML等でparse
+<br/>
+
+<ul class="text-xl font-bold">
+  <li>先にrouter,modelを作ることでFEとの競合を抑える</li>
+  <li>既にある実装を再利用できるためオーバーヘッドが少ない</li>
+  <li>OpenAPIの対応自体は数行の追加で可能</li>
+  <li>modelの情報はFieldの引数に追加</li>
+  <li>ymlを使う場合はPyYML等でparse</li>
+</ul>
 
 ---
 

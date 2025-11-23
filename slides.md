@@ -15,7 +15,7 @@ title: |
 info: |
   TSKaigi Hokurikuで発表するスライドです
 # apply UnoCSS classes to the current slide
-class: text-center
+class: "text-center font-bold"
 # https://sli.dev/features/drawing
 drawings:
   persist: true
