@@ -8,6 +8,8 @@
 <SectionTitle :title="'スキーマ駆動開発でよく起きる問題'"/>
 
 ---
+class: font-bold
+---
 
 ## 1. 局所最適化によるコストシフト
 
@@ -26,6 +28,8 @@ e.g. FEにとってTypeSpecの運用が楽だとしてもBEにとっては旨み
 
 <h4 class="mt-12 pa-2 border-1px text-center whitespace-pre-wrap">{{"プロジェクトの時間軸とリソースによってトレードオフ構造がシフトするため、\r\n一辺倒に解決することは難しい"}}</h4>
 
+---
+class: font-bold
 ---
 
 ## 2. 早すぎた適用🧟
@@ -51,6 +55,7 @@ e.g. FEにとってTypeSpecの運用が楽だとしてもBEにとっては旨み
 
 ---
 # src: ./section2-edge-case.md
+class: font-bold
 ---
 
 ## 3. そもそもOpenAPIのメンテコストが高い

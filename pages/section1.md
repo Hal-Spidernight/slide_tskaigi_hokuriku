@@ -25,6 +25,8 @@ layout: default
 <WhatIsSDD/>
 
 ---
+class: font-bold
+---
 
 ## イメージ
 
@@ -58,6 +60,7 @@ graph LR
 ---
 drawings:
   persist: true
+class: font-bold
 ---
 
 ### OpenAPI

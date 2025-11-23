@@ -10,7 +10,7 @@
       :enter="{ y: 0 }"
       :leave="{ y: 50 }"
     >
-      <h5 class="font-bold">{{ factor.title }}</h5>
+      <h3 class="font-bold">{{ factor.title }}</h3>
       <ul class="mt-4 text-xs">
         <li v-for="(description, idx) in factor.descriptions" :key="idx">{{ description }}</li>
       </ul>
