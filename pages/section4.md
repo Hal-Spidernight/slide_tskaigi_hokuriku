@@ -164,10 +164,10 @@ transition: fade
 
 <SectionTitle title="BEにはNode.jsを積極的に採用しよう！"/>
 
-<div v-click v-drag="[796,398,88,96]" class="text-center font-bold w-75">
+<div v-click v-drag="[796,398,88,96]" class="text-center font-bold w-100">
   <h3 >終</h3>
-  <hr class="my-2"/>
-  <p class="my-0">H  A  L</p>
+  <hr class="my-1"/>
+  <h4 style="margin:0">H  A  L</h4>
 </div>
 
 ---
