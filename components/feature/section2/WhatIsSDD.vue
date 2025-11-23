@@ -1,5 +1,5 @@
 <template>
-  <SectionCard>
+  <SectionCard class="font-bold">
     <h2 class="my-4 ml-6">フロントエンド・バックエンドの開発でよく起きる問題</h2>
     <ul class="ml-8 mt-8 problems">
       <li

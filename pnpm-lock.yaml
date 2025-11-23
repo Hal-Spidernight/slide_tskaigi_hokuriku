@@ -18,8 +18,8 @@ importers:
         specifier: latest
         version: 0.25.0
       slidev-theme-hal:
-        specifier: ^0.1.2
-        version: 0.1.2(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.24)(markdown-it-async@2.2.0)(postcss@8.5.6)(typescript@5.9.3)(vite@7.2.2(@types/node@22.19.1)(jiti@2.6.1)(yaml@2.8.1))
+        specifier: ^0.1.3
+        version: 0.1.3(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.24)(markdown-it-async@2.2.0)(postcss@8.5.6)(typescript@5.9.3)(vite@7.2.2(@types/node@22.19.1)(jiti@2.6.1)(yaml@2.8.1))
       vue:
         specifier: ^3.5.24
         version: 3.5.24(typescript@5.9.3)
@@ -2639,8 +2639,8 @@ packages:
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
-  slidev-theme-hal@0.1.2:
-    resolution: {integrity: sha512-hNVaY67VtTbkYwisk3KjRsnkSxH59wT9p0X58fA/WJ6Zp04aIMFqSQDJg25Ac01jn0DbgPN8taoUSBOdq5VNoQ==}
+  slidev-theme-hal@0.1.3:
+    resolution: {integrity: sha512-NHrgnOKMCCdJ8cQWT1r4nkKttArOVRkYfdUa5h0fU/7ZmtcBN6TNZDJU95rg/Ia8Gd1zCeR1+/YRjpLo13JsEw==}
     engines: {node: '>=18.0.0'}
 
   source-map-js@1.2.1:
@@ -6131,7 +6131,7 @@ snapshots:
 
   sisteransi@1.0.5: {}
 
-  slidev-theme-hal@0.1.2(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.24)(markdown-it-async@2.2.0)(postcss@8.5.6)(typescript@5.9.3)(vite@7.2.2(@types/node@22.19.1)(jiti@2.6.1)(yaml@2.8.1)):
+  slidev-theme-hal@0.1.3(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.24)(markdown-it-async@2.2.0)(postcss@8.5.6)(typescript@5.9.3)(vite@7.2.2(@types/node@22.19.1)(jiti@2.6.1)(yaml@2.8.1)):
     dependencies:
       '@slidev/types': 52.8.0(@nuxt/kit@3.20.1)(@vue/compiler-sfc@3.5.24)(markdown-it-async@2.2.0)(postcss@8.5.6)(typescript@5.9.3)(vite@7.2.2(@types/node@22.19.1)(jiti@2.6.1)(yaml@2.8.1))
     transitivePeerDependencies:

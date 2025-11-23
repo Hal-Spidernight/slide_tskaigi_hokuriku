@@ -7,7 +7,7 @@ class: font-bold
 
 ## 自己紹介
 
-<div class="my-0">
+<div class="my-0 font-bold">
     <p style="white-space:pre-wrap">{{"株式会社LIXIL\r\nアプリケーションエキスパート"}}</p>
     <h2>Hal</h2>
 </div>
@@ -111,6 +111,8 @@ components:
 ````
 
 ---
+class: font-bold
+---
 
 #### TypeScript
 
@@ -155,6 +157,8 @@ export interface components {
 ````
 
 ---
+class: font-bold
+---
 
 #### Java(POJO)
 
@@ -170,6 +174,8 @@ public class getUserByIdResponse {
 }
 ```
 
+---
+class: font-bold
 ---
 
 ## スキーマ駆動開発(SDD)のメリット
